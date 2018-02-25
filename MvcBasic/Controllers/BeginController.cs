@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcBasic.Models;
 
 namespace MvcBasic.Controllers
 {
@@ -28,7 +29,13 @@ namespace MvcBasic.Controllers
             // call /views/begin/show.html
             // if you set other view name at {action}, call other view, actions can share a view.
             return View();
-
         }
+
+        public ActionResult List()
+        {
+            return View(db.Members);
+        }
+
+        private  MvcBasicContext db = new MvcBasicContext();
     }
 }
