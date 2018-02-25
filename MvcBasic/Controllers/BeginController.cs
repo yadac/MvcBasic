@@ -13,5 +13,22 @@ namespace MvcBasic.Controllers
         {
             return Content("Hello World!!");
         }
+
+        public ActionResult Show()
+        {
+            // view var1 as ViewBag
+            // this view var realize by dynamic, so intellisense has not worked.
+            ViewBag.Message = "hello world!";
+
+            // view var2 as ViewData
+            ViewData["Message2"] = "good morning!";
+
+            // helper method
+            // call /views/{controller}/{action}.html
+            // call /views/begin/show.html
+            // if you set other view name at {action}, call other view, actions can share a view.
+            return View();
+
+        }
     }
 }
