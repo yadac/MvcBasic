@@ -22,18 +22,18 @@ namespace MvcBasic.Models
                 new Member()
                 {
                     Name = "Taro Yamada",
-                    Email = "taro.yamada@example.com",
+                    Email = "dokaben@example.com",
                     Birth = DateTime.Parse("1980-01-02"),
                     Married = false,
-                    Memo = "dokaben",
+                    Memo = "『ドカベン』の主人公。ポジションは捕手。右投左打。新潟県新潟市旭七ヶ町生まれの神奈川県横浜市育ち。",
                 },
                 new Member()
                 {
-                    Name = "Nobunaga Oda",
-                    Email = "nobunaga.oda@example.com",
-                    Birth = DateTime.Parse("1583-10-12"),
+                    Name = "Okitsugu Tanuma",
+                    Email = "otanuma@example.com",
+                    Birth = DateTime.Parse("1753-01-01"), // sql server datetime range min 
                     Married = true,
-                    Memo = "owari no samurai",
+                    Memo = "享保4年（1719年）7月27日、紀州藩士から旗本になった田沼意行の長男として江戸の本郷弓町の屋敷で生まれる。幼名は龍助。",
                 }
             };
 
