@@ -25,11 +25,14 @@ namespace MvcBasic.Controllers
         {
             if (id == null)
             {
+                // return only http status code. badrequest = 400
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Member member = _db.Members.Find(id);
             if (member == null)
             {
+                // this method is more smarter than creating a new HttpStatusCodeResult instance.
+                // "helper method"
                 return HttpNotFound();
             }
             return View(member);
