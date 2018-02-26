@@ -33,9 +33,9 @@ namespace MvcBasic.Controllers
 
         public ActionResult List()
         {
-            return View(db.Members);
+            return View(_db.Members);
         }
 
-        private  MvcBasicContext db = new MvcBasicContext();
+        private readonly MvcBasicContext _db = new MvcBasicContext();
     }
 }
