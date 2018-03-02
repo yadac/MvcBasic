@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model MvcBasic.Models.Member
 
 @{
     ViewBag.Title = "title";
@@ -6,27 +6,36 @@
 
 <h2>Razor Samples</h2>
 
-@*@{
-        for (int i = 0; i < 3; i++)
-        {
-            // tag内は静的コンテンツとして扱われる
-            // 明示的コードナゲット
-            <p>i = @(i)</p>
-        }
-        // 単一行コンテンツ
-        @: This is Static Contents.
-    }*@
-
-
-@{
-    Html.BeginForm();
-    Html.EndForm();
-}
-
-
-@using (Html.BeginForm())
+@using (Html.BeginForm(
+            "Edit",     // action-name
+            "Result",   // controller-name
+            new { id = "H15A1", charset = "utf8" }, // route-parameter
+            FormMethod.Post,                        // http-method
+            new { id = "fm", enctype = "multipart/form-data" }  // other html form attributes
+            ))
 {
-}
+    // Form contents
+    @Html.TextBoxFor(
+        model => model.Name, // property
+        new { @readonly = "readonly", size = 30, maxlength = 40 } // other attributes
+        )
+    
+    <br>
+    // This method outputs 2 input information, for have not selected checkbox.
+    // If then browser do not send any information to server.
+    @Html.CheckBoxFor(
+        model => model.Married,
+        new {tabindex = 1})
 
-<!-- escape atmark -->
-<!-- @@nifty -->
+    <br>
+    // selectbox = single, listbox = multi
+    @Html.DropDownListFor(
+        model => model.Email,
+        (IEnumerable<SelectListItem>)ViewBag.SelectOptions,
+        "Please choise",
+        new {@class = "e-mail_list"}
+        )
+
+    // enumselectbox
+    @Html.EnumDropDownListFor(model => model.Language)
+}

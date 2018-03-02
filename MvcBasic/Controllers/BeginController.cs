@@ -19,8 +19,17 @@ namespace MvcBasic.Controllers
         // GET: Begin
         public ActionResult Index()
         {
+            // prepare values of select-box in advance.
+            ViewBag.SelectOptions = new SelectListItem[]
+            {
+                new SelectListItem(){Value = "Java", Text = "Java"},
+                new SelectListItem(){Value = "C#", Text = "C#"},
+                new SelectListItem(){Value = "Ruby", Text = "Ruby"},
+            };
+
             // return Content("Hello World!!");
-            return View();
+            Member meber = _db.Members.Find(1);
+            return View(meber);
         }
 
         public ActionResult Show()

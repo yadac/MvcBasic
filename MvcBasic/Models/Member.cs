@@ -20,7 +20,10 @@ namespace MvcBasic.Models
         public DateTime Birth { get; set; }
         [DisplayName("既婚")]
         public bool Married { get; set; }
+        [DisplayName("言語")]
+        public LanguageEnum Language { get; set; }
         [DisplayName("自己紹介")]
         public string Memo { get; set; }
+
     }
 }
