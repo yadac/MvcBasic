@@ -1,0 +1,32 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Razor Samples</h2>
+
+@*@{
+        for (int i = 0; i < 3; i++)
+        {
+            // tag内は静的コンテンツとして扱われる
+            // 明示的コードナゲット
+            <p>i = @(i)</p>
+        }
+        // 単一行コンテンツ
+        @: This is Static Contents.
+    }*@
+
+
+@{
+    Html.BeginForm();
+    Html.EndForm();
+}
+
+
+@using (Html.BeginForm())
+{
+}
+
+<!-- escape atmark -->
+<!-- @@nifty -->
