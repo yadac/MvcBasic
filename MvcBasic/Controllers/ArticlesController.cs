@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using MvcBasic.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MvcBasic.Models;
 
 namespace MvcBasic.Controllers
 {
@@ -125,7 +121,8 @@ namespace MvcBasic.Controllers
         {
             Comment comment = db.Comments.Find(id);
             return View(comment);
-;        }
+            ;
+        }
 
         public ActionResult ViewAllComments()
         {

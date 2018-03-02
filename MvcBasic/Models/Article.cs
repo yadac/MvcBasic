@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcBasic.Models
 {
+    [Table("Contents")]
     public class Article
     {
         public int Id { get; set; }
@@ -23,6 +23,7 @@ namespace MvcBasic.Models
 
         [DisplayName("概要")]
         [DataType(DataType.MultilineText)]
+        [Column("Note", Order = 0, TypeName = "NTEXT")]
         public string Description { get; set; }
 
         [DisplayName("ビュー数")]
