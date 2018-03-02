@@ -112,8 +112,13 @@ namespace MvcBasic.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Member member = _db.Members.Find(id);
-            _db.Members.Remove(member);
+            //Member member = _db.Members.Find(id);
+            //_db.Members.Remove(member);
+
+            // don't access table to find deleting id.
+            Member member = new Member(){Id = id};
+            _db.Entry(member).State = EntityState.Deleted;
+
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
