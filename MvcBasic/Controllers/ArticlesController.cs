@@ -121,6 +121,12 @@ namespace MvcBasic.Controllers
             return View(article);
         }
 
+        public ActionResult NavigationWithComment(int id)
+        {
+            Comment comment = db.Comments.Find(id);
+            return View(comment);
+;        }
+
         public ActionResult ViewAllComments()
         {
             return View(db.Comments.ToList());

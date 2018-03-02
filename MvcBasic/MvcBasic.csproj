@@ -217,6 +217,7 @@
     <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Articles\Navigation.cshtml" />
     <Content Include="Views\Articles\ViewAllComments.cshtml" />
+    <Content Include="Views\Articles\NavigationWithComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
