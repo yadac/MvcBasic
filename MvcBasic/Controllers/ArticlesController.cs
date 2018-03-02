@@ -121,6 +121,11 @@ namespace MvcBasic.Controllers
             return View(article);
         }
 
+        public ActionResult ViewAllComments()
+        {
+            return View(db.Comments.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

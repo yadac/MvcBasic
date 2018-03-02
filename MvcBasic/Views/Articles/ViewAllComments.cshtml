@@ -1,0 +1,24 @@
+﻿@using System.Threading
+@model System.Collections.Generic.List<MvcBasic.Models.Comment>
+
+@{
+    ViewBag.Title = "title";
+    int counter = 0;
+}
+
+<h2>All Comment</h2>
+
+
+@foreach (var c in Model)
+{
+    counter++;
+
+    <p>
+        @Html.ActionLink(
+           c.Body,
+           "Navigation",
+           "Articles",
+           new { id = c.Id },
+           new { tabindex = counter })
+    </p>
+}
