@@ -115,6 +115,12 @@ namespace MvcBasic.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Navigation(int id)
+        {
+            Article article = db.Articles.Find(id);
+            return View(article);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
