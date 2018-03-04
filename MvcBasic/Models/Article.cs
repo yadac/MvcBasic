@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -40,5 +41,21 @@ namespace MvcBasic.Models
 
         [DisplayName("著者")]
         public virtual ICollection<Author> Authors { get; set; }
+
+        [NotMapped]
+        public string Summary
+        {
+            get
+            {
+                if (Description.Length > 50)
+                {
+                    return Description.Substring(0, 50);
+                }
+                else
+                {
+                    return Description;
+                }
+            }
+        }
     }
 }
