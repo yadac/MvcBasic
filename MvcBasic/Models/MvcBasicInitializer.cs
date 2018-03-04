@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -202,6 +203,25 @@ namespace MvcBasic.Models
                 Articles = new List<Article> { article, article2 }
             };
             context.Authors.Add(author3);
+
+
+            #endregion
+
+            #region People
+
+            Address address1 = new Address()
+            {
+                Prefecture = "Aichi",
+                City = "Nagoya",
+                Street = "Route-1",
+            };
+
+            Person person1 = new Person()
+            {
+                Name = "Nobunaga",
+                Address = address1,
+            };
+            context.People.Add(person1);
 
 
             #endregion
