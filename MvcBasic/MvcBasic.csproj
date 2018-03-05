@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201803041310432_InitialCreate.Designer.cs">
       <DependentUpon>201803041310432_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803050035511_AddAddressToAuthours.cs" />
+    <Compile Include="Migrations\201803050035511_AddAddressToAuthours.Designer.cs">
+      <DependentUpon>201803050035511_AddAddressToAuthours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -251,6 +255,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803041310432_InitialCreate.resx">
       <DependentUpon>201803041310432_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803050035511_AddAddressToAuthours.resx">
+      <DependentUpon>201803050035511_AddAddressToAuthours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
