@@ -1,5 +1,6 @@
 ﻿using MvcBasic.Models;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -74,13 +75,20 @@ namespace MvcBasic.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Url,Title,Category,Description,ViewCount,Published,Released")] Article article)
+        public ActionResult Edit([Bind(Include = "Id,Url,Title,Category,Description,ViewCount,Published,Released, Timestamp")] Article article)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(article).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(article).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                ModelState.AddModelError(string.Empty, "更新の競合が検出されました。");
             }
             return View(article);
         }

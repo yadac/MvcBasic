@@ -165,6 +165,10 @@
     <Compile Include="Migrations\201803050726494_AddArticleView.Designer.cs">
       <DependentUpon>201803050726494_AddArticleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803050851324_AddTimestampToArticle.cs" />
+    <Compile Include="Migrations\201803050851324_AddTimestampToArticle.Designer.cs">
+      <DependentUpon>201803050851324_AddTimestampToArticle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -265,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803050726494_AddArticleView.resx">
       <DependentUpon>201803050726494_AddArticleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803050851324_AddTimestampToArticle.resx">
+      <DependentUpon>201803050851324_AddTimestampToArticle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -40,6 +40,9 @@ namespace MvcBasic.Models
         [DisplayName("著者")]
         public virtual ICollection<Author> Authors { get; set; }
 
+        [Timestamp]
+        public byte[] Timestamp { get; set; } // store version number
+
         [NotMapped]
         public string Summary
         {
