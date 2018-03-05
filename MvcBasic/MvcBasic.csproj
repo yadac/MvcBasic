@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201803050035511_AddAddressToAuthours.Designer.cs">
       <DependentUpon>201803050035511_AddAddressToAuthours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803050112305_RemoveAddressFromAuthours.cs" />
+    <Compile Include="Migrations\201803050112305_RemoveAddressFromAuthours.Designer.cs">
+      <DependentUpon>201803050112305_RemoveAddressFromAuthours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -258,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803050035511_AddAddressToAuthours.resx">
       <DependentUpon>201803050035511_AddAddressToAuthours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803050112305_RemoveAddressFromAuthours.resx">
+      <DependentUpon>201803050112305_RemoveAddressFromAuthours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

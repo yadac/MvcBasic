@@ -12,10 +12,6 @@ namespace MvcBasic.Models
         [DisplayName("氏名")]
         public string Name { get; set; }
 
-        [DisplayName("住所")]
-        public string Address { get; set; }
-
-
         [DisplayName("メールアドレス")]
         public string Email { get; set; }
 
