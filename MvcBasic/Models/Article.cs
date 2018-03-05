@@ -22,7 +22,6 @@ namespace MvcBasic.Models
 
         [DisplayName("概要")]
         [DataType(DataType.MultilineText)]
-        [Column("Note", Order = 0, TypeName = "NTEXT")]
         public string Description { get; set; }
 
         [DisplayName("ビュー数")]

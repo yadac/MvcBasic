@@ -1,6 +1,8 @@
 using MvcBasic.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 
 namespace MvcBasic.Migrations
 {
@@ -10,10 +12,12 @@ namespace MvcBasic.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "MvcBasic.Models.MvcBasicContext";
-            AutomaticMigrationDataLossAllowed = true;
+            // AutomaticMigrationDataLossAllowed = true;
+
         }
+
 
         protected override void Seed(MvcBasic.Models.MvcBasicContext context)
         {
@@ -22,13 +26,16 @@ namespace MvcBasic.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+
+            // debug query
+            context.Database.Log = sql => Debug.Write(sql);
+
             #region Member
 
             var members = new List<Member>()
             {
                 new Member()
                 {
-                    Id = 1,
                     Name = "Taro Yamada",
                     Email = "dokaben@example.com",
                     Birth = DateTime.Parse("1980-01-02"),
@@ -38,7 +45,6 @@ namespace MvcBasic.Migrations
                 },
                 new Member()
                 {
-                    Id = 2,
                     Name = "Okitsugu Tanuma",
                     Email = "otanuma@example.com",
                     Birth = DateTime.Parse("1753-01-01"), // sql server datetime range min 
@@ -48,16 +54,16 @@ namespace MvcBasic.Migrations
                 }
             };
 
-            members.ForEach(m => context.Members.AddOrUpdate(m));
+            members.ForEach(m => context.Members.AddOrUpdate(item => item.Email, m));
 
 
             #endregion
 
-            #region Article & Comment
+            #region Article
 
+            List<Article> articles = new List<Article>();
             var article = new Article
             {
-                Id = 1,
                 Url = "http://www.buildinsider.net/web/jquerymobileref",
                 Title = "jQuery Mobile逆引きリファレンス",
                 Category = CategoryEnum.Reference,
@@ -66,27 +72,10 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2014-01-09"),
                 Released = true
             };
-            context.Articles.AddOrUpdate(article);
-            context.Comments.AddOrUpdate(new Comment
-            {
-                Id = 1,
-                Name = "井上鈴子",
-                Body = "目的別で探しやすく重宝しています。",
-                Updated = DateTime.Parse("2014-06-01"),
-                Article = article
-            });
-            context.Comments.AddOrUpdate(new Comment
-            {
-                Id = 2,
-                Name = "和田翔太",
-                Body = "寸例が載っているのでわかりやすいと思います。",
-                Updated = DateTime.Parse("2014-06-11"),
-                Article = article
-            });
+            articles.Add(article);
 
             var article2 = new Article
             {
-                Id = 2,
                 Url = "http://codezine.jp/article/corner/518",
                 Title = "Bootstrapでレスポンシブでリッチなサイトを構築",
                 Category = CategoryEnum.DotNet,
@@ -95,19 +84,10 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2014-05-22"),
                 Released = true
             };
-            context.Articles.AddOrUpdate(article2);
-            context.Comments.AddOrUpdate(new Comment
-            {
-                Id = 1,
-                Name = "田中三郎",
-                Body = "まとめ方が良くてわかりやすかったです。",
-                Updated = DateTime.Parse("2014-06-15"),
-                Article = article2
-            });
+            articles.Add(article2);
 
             var article3 = new Article
             {
-                Id = 3,
                 Url = "http://codezine.jp/article/corner/511",
                 Title = "ASP.NET Identity入門",
                 Category = CategoryEnum.DotNet,
@@ -116,20 +96,10 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2014-04-25"),
                 Released = true
             };
-            context.Articles.AddOrUpdate(article3);
-            context.Comments.AddOrUpdate(new Comment
-            {
-                Id = 1,
-                Name = "和田翔太",
-                Body = "自分で調べていて分からなかったところが、分かって良かったです。",
-                Updated = DateTime.Parse("2014-07-02"),
-                Article = article3
-            });
-
+            articles.Add(article3);
 
             var article4 = new Article
             {
-                Id = 4,
                 Url = "http://codezine.jp/article/corner/513",
                 Title = "Amazon Web Servicesによるクラウド超入門",
                 Category = CategoryEnum.Cloud,
@@ -138,12 +108,11 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2014-04-25"),
                 Released = true
             };
-            context.Articles.AddOrUpdate(article4);
+            articles.Add(article4);
 
 
             var article5 = new Article
             {
-                Id = 5,
                 Url = "http://www.buildinsider.net/web/jqueryuiref",
                 Title = "jQuery UI逆引きリファレンス",
                 Category = CategoryEnum.Reference,
@@ -152,19 +121,10 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2013-07-11"),
                 Released = true
             };
-            context.Articles.AddOrUpdate(article5);
-            context.Comments.AddOrUpdate(new Comment
-            {
-                Id = 1,
-                Name = "井上鈴子",
-                Body = "用例の結果もみられるので、便利です。欲を言うとサンプルコードをダウンロードできるようにしてほしい。",
-                Updated = DateTime.Parse("2014-07-01"),
-                Article = article5
-            });
+            articles.Add(article5);
 
             var article6 = new Article
             {
-                Id = 6,
                 Url = "http://www.example.com/mvc5",
                 Title = "ASP.NET MVC 入門",
                 Category = CategoryEnum.DotNet,
@@ -173,11 +133,10 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2015-01-20"),
                 Released = false
             };
-            context.Articles.AddOrUpdate(article6);
+            articles.Add(article6);
 
             var article7 = new Article
             {
-                Id = 7,
                 Url = "http://www.example.com/azure",
                 Title = "Azure新機能TIPS",
                 Category = CategoryEnum.Cloud,
@@ -186,7 +145,67 @@ namespace MvcBasic.Migrations
                 Published = DateTime.Parse("2014-04-25"),
                 Released = true
             };
-            context.Articles.AddOrUpdate(article7);
+            articles.Add(article7);
+            articles.ForEach(a => context.Articles.AddOrUpdate(item => item.Url, a));
+
+
+            #endregion
+
+            #region Comment
+
+            if (!context.Comments.Any())
+            {
+                List<Comment> comments = new List<Comment>();
+
+                Comment c1 = new Comment()
+                {
+                    Name = "井上鈴子",
+                    Body = "目的別で探しやすく重宝しています。",
+                    Updated = DateTime.Parse("2014-06-01"),
+                    Article = article
+                };
+                comments.Add(c1);
+
+                Comment c2 = new Comment()
+                {
+                    Name = "和田翔太",
+                    Body = "寸例が載っているのでわかりやすいと思います。",
+                    Updated = DateTime.Parse("2014-06-11"),
+                    Article = article
+                };
+                comments.Add(c2);
+
+                Comment c3 = new Comment()
+                {
+                    Name = "田中三郎",
+                    Body = "まとめ方が良くてわかりやすかったです。",
+                    Updated = DateTime.Parse("2014-06-15"),
+                    Article = article2
+                };
+                comments.Add(c3);
+
+                Comment c4 = new Comment()
+                {
+                    Name = "和田翔太",
+                    Body = "自分で調べていて分からなかったところが、分かって良かったです。",
+                    Updated = DateTime.Parse("2014-07-02"),
+                    Article = article3
+                };
+                comments.Add(c4);
+
+                Comment c5 = new Comment()
+                {
+                    Name = "井上鈴子",
+                    Body = "用例の結果もみられるので、便利です。欲を言うとサンプルコードをダウンロードできるようにしてほしい。",
+                    Updated = DateTime.Parse("2014-07-01"),
+                    Article = article5
+                };
+                comments.Add(c5);
+
+                //comments.ForEach(c => context.Comments.AddOrUpdate(item => item.Body, c));
+
+            }
+
 
 
 
@@ -194,35 +213,34 @@ namespace MvcBasic.Migrations
 
             #region Author
 
+            var authours = new List<Author>();
             var author1 = new Author
             {
-                Id = 1,
                 Name = "山田太郎",
                 Email = "taro@example.com",
                 Birth = DateTime.Parse("1970-12-10"),
                 Articles = new List<Article> { article, article2, article3, article5, article6 }
             };
-            context.Authors.AddOrUpdate(author1);
+            authours.Add(author1);
 
             var author2 = new Author
             {
-                Id = 2,
                 Name = "鈴木久美",
                 Email = "kumi@example.com",
                 Birth = DateTime.Parse("1985-11-12"),
                 Articles = new List<Article> { article, article4, article7 }
             };
-            context.Authors.AddOrUpdate(author2);
+            authours.Add(author2);
 
             var author3 = new Author
             {
-                Id = 3,
                 Name = "佐藤敏夫",
                 Email = "toshi@example.com",
                 Birth = DateTime.Parse("1975-05-26"),
                 Articles = new List<Article> { article, article2 }
             };
-            context.Authors.AddOrUpdate(author3);
+            authours.Add(author3);
+            authours.ForEach(a => context.Authors.AddOrUpdate(item => item.Email, a));
 
 
             #endregion
@@ -238,15 +256,15 @@ namespace MvcBasic.Migrations
 
             Person person1 = new Person()
             {
-                Id = 1,
                 Name = "Nobunaga",
                 Address = address1,
             };
-            context.People.AddOrUpdate(person1);
+            context.People.AddOrUpdate(p => p.Name, person1);
 
 
             #endregion
 
+            context.SaveChanges();
 
         }
     }

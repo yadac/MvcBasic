@@ -6,6 +6,7 @@ namespace MvcBasic.Migrations
     {
         public override void Up()
         {
+            DropTable("dbo.People");
             CreateTable(
                 "dbo.People",
                 c => new

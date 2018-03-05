@@ -24,7 +24,6 @@ namespace MvcBasic
 
             // initialize by Configuration.cs
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MvcBasicContext, Configuration>());
-
         }
     }
 }

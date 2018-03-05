@@ -7,7 +7,6 @@ namespace MvcBasic.Models
     public class Comment
     {
         public int Id { get; set; }
-        public int ArticleId { get; set; } // foreign key property
 
         [DisplayName("氏名")]
         public string Name { get; set; }
@@ -21,6 +20,7 @@ namespace MvcBasic.Models
 
         [DisplayName("記事")]
         public virtual Article Article { get; set; }
+        public int ArticleId { get; set; } // foreign key property
 
 
     }
