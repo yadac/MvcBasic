@@ -129,6 +129,12 @@ namespace MvcBasic.Controllers
             return View(db.Comments.ToList());
         }
 
+        public ActionResult SelectQuery()
+        {
+            var articles = db.Database.SqlQuery<ArticleView>("select * from Articles;");
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
