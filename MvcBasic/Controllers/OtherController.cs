@@ -27,5 +27,16 @@ namespace MvcBasic.Controllers
 
             return Content("Added Comment");
         }
+
+        public ActionResult Update()
+        {
+            // コメント1を記事4に付与
+            var article = db.Articles.Find(4);
+            var comment = db.Comments.Find(1);
+            article.Comments.Add(comment);
+            db.SaveChanges();
+
+            return Content("Update Article!");
+        }
     }
 }
