@@ -7,13 +7,13 @@ namespace MvcBasic.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class AddArticleView : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddArticleView));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803050700059_initialcreate"; }
+            get { return "201803050726494_AddArticleView"; }
         }
         
         string IMigrationMetadata.Source

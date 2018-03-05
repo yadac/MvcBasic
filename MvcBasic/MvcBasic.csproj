@@ -160,9 +160,14 @@
     <Compile Include="Migrations\201803050700059_initialcreate.Designer.cs">
       <DependentUpon>201803050700059_initialcreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803050726494_AddArticleView.cs" />
+    <Compile Include="Migrations\201803050726494_AddArticleView.Designer.cs">
+      <DependentUpon>201803050726494_AddArticleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleView.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CategoryEnum.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -234,6 +239,7 @@
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\Linq\Search.cshtml" />
+    <Content Include="Views\Linq\Select.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +260,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803050700059_initialcreate.resx">
       <DependentUpon>201803050700059_initialcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803050726494_AddArticleView.resx">
+      <DependentUpon>201803050726494_AddArticleView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

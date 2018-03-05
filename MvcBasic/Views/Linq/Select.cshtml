@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MvcBasic.Models.ArticleView>
+
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>Select</h2>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+        <th>@Html.DisplayNameFor(model => model.Viewcount)</th>
+        <th>@Html.DisplayNameFor(model => model.Released)</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(i => item.Title)</td>
+            <td>@Html.DisplayFor(i => item.Viewcount)</td>
+            <td>@Html.DisplayFor(i => item.Released)</td>
+        </tr>
+
+    }
+
+</table>

@@ -1,93 +1,92 @@
 namespace MvcBasic.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
-    public partial class initialcreate : DbMigration
+
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
             CreateTable(
                 "dbo.Articles",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Url = c.String(),
-                        Title = c.String(),
-                        Category = c.Int(nullable: false),
-                        Description = c.String(),
-                        ViewCount = c.Int(nullable: false),
-                        Published = c.DateTime(nullable: false),
-                        Released = c.Boolean(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Url = c.String(),
+                    Title = c.String(),
+                    Category = c.Int(nullable: false),
+                    Description = c.String(),
+                    ViewCount = c.Int(nullable: false),
+                    Published = c.DateTime(nullable: false),
+                    Released = c.Boolean(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.Authors",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Email = c.String(),
-                        Birth = c.DateTime(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Email = c.String(),
+                    Birth = c.DateTime(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.Comments",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Body = c.String(),
-                        Updated = c.DateTime(nullable: false),
-                        ArticleId = c.Int(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Body = c.String(),
+                    Updated = c.DateTime(nullable: false),
+                    ArticleId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: true)
                 .Index(t => t.ArticleId);
-            
+
             CreateTable(
                 "dbo.Members",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Email = c.String(),
-                        Birth = c.DateTime(nullable: false),
-                        Married = c.Boolean(nullable: false),
-                        Language = c.Int(nullable: false),
-                        Memo = c.String(),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Email = c.String(),
+                    Birth = c.DateTime(nullable: false),
+                    Married = c.Boolean(nullable: false),
+                    Language = c.Int(nullable: false),
+                    Memo = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.People",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Address_Prefecture = c.String(),
-                        Address_City = c.String(),
-                        Address_Street = c.String(),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Address_Prefecture = c.String(),
+                    Address_City = c.String(),
+                    Address_Street = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.AuthorArticles",
                 c => new
-                    {
-                        Author_Id = c.Int(nullable: false),
-                        Article_Id = c.Int(nullable: false),
-                    })
+                {
+                    Author_Id = c.Int(nullable: false),
+                    Article_Id = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => new { t.Author_Id, t.Article_Id })
                 .ForeignKey("dbo.Authors", t => t.Author_Id, cascadeDelete: true)
                 .ForeignKey("dbo.Articles", t => t.Article_Id, cascadeDelete: true)
                 .Index(t => t.Author_Id)
                 .Index(t => t.Article_Id);
-            
+
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Comments", "ArticleId", "dbo.Articles");

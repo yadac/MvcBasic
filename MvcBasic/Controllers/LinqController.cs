@@ -1,4 +1,5 @@
 ﻿using MvcBasic.Models;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -26,6 +27,19 @@ namespace MvcBasic.Controllers
                 articles = articles.Where(a => a.Released);
             }
 
+            return View(articles);
+        }
+
+        public ActionResult Select()
+        {
+            var articles = from a in _db.Articles
+                           orderby a.Published descending
+                           select new ArticleView
+                           {
+                               Title = a.Title.Substring(0, 10),
+                               Viewcount = (int)Math.Ceiling(a.ViewCount / 1000.0),
+                               Released = (a.Released ? "公開中" : "公開予定"),
+                           };
             return View(articles);
         }
     }
