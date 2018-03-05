@@ -12,18 +12,30 @@ namespace MvcBasic.Controllers
         // GET: Other
         public ActionResult Insert()
         {
-            // get target article
-            var article = db.Articles.Find(2);
-
-            // add comment
-            db.Comments.Add(new Comment()
+            using (var tx = db.Database.BeginTransaction())
             {
-                Article = article,
-                Name = "Koizumi",
-                Body = "感動した！",
-                Updated = DateTime.Parse("2014-6-20")
-            });
-            db.SaveChanges();
+                try
+                {
+                    // get target article
+                    var article = db.Articles.Find(2);
+
+                    // add comment
+                    db.Comments.Add(new Comment()
+                    {
+                        Article = article,
+                        Name = "Koizumi",
+                        Body = "感動した！",
+                        Updated = DateTime.Parse("2014-6-20")
+                    });
+                    db.SaveChanges();
+                    tx.Commit();
+                }
+                catch (Exception e)
+                {
+                    tx.Rollback();
+                    return Content("Insert Failed");
+                }
+            }
 
             return Content("Added Comment");
         }

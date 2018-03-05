@@ -131,8 +131,9 @@ namespace MvcBasic.Controllers
 
         public ActionResult SelectQuery()
         {
-            var articles = db.Database.SqlQuery<ArticleView>("select * from Articles;");
-            return RedirectToAction("Index");
+            var articles = db.Database.SqlQuery<Article>("SELECT * FROM Articles;");
+            // dbrawの型をienumerableで受けることができる
+            return View("Index", articles);
         }
 
         protected override void Dispose(bool disposing)
