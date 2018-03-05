@@ -28,6 +28,7 @@ namespace MvcBasic.Migrations
             {
                 new Member()
                 {
+                    Id = 1,
                     Name = "Taro Yamada",
                     Email = "dokaben@example.com",
                     Birth = DateTime.Parse("1980-01-02"),
@@ -37,6 +38,7 @@ namespace MvcBasic.Migrations
                 },
                 new Member()
                 {
+                    Id = 2,
                     Name = "Okitsugu Tanuma",
                     Email = "otanuma@example.com",
                     Birth = DateTime.Parse("1753-01-01"), // sql server datetime range min 
@@ -55,6 +57,7 @@ namespace MvcBasic.Migrations
 
             var article = new Article
             {
+                Id = 1,
                 Url = "http://www.buildinsider.net/web/jquerymobileref",
                 Title = "jQuery Mobile逆引きリファレンス",
                 Category = CategoryEnum.Reference,
@@ -66,6 +69,7 @@ namespace MvcBasic.Migrations
             context.Articles.AddOrUpdate(article);
             context.Comments.AddOrUpdate(new Comment
             {
+                Id = 1,
                 Name = "井上鈴子",
                 Body = "目的別で探しやすく重宝しています。",
                 Updated = DateTime.Parse("2014-06-01"),
@@ -73,6 +77,7 @@ namespace MvcBasic.Migrations
             });
             context.Comments.AddOrUpdate(new Comment
             {
+                Id = 2,
                 Name = "和田翔太",
                 Body = "寸例が載っているのでわかりやすいと思います。",
                 Updated = DateTime.Parse("2014-06-11"),
@@ -81,6 +86,7 @@ namespace MvcBasic.Migrations
 
             var article2 = new Article
             {
+                Id = 2,
                 Url = "http://codezine.jp/article/corner/518",
                 Title = "Bootstrapでレスポンシブでリッチなサイトを構築",
                 Category = CategoryEnum.DotNet,
@@ -92,6 +98,7 @@ namespace MvcBasic.Migrations
             context.Articles.AddOrUpdate(article2);
             context.Comments.AddOrUpdate(new Comment
             {
+                Id = 1,
                 Name = "田中三郎",
                 Body = "まとめ方が良くてわかりやすかったです。",
                 Updated = DateTime.Parse("2014-06-15"),
@@ -100,6 +107,7 @@ namespace MvcBasic.Migrations
 
             var article3 = new Article
             {
+                Id = 3,
                 Url = "http://codezine.jp/article/corner/511",
                 Title = "ASP.NET Identity入門",
                 Category = CategoryEnum.DotNet,
@@ -111,6 +119,7 @@ namespace MvcBasic.Migrations
             context.Articles.AddOrUpdate(article3);
             context.Comments.AddOrUpdate(new Comment
             {
+                Id = 1,
                 Name = "和田翔太",
                 Body = "自分で調べていて分からなかったところが、分かって良かったです。",
                 Updated = DateTime.Parse("2014-07-02"),
@@ -120,6 +129,7 @@ namespace MvcBasic.Migrations
 
             var article4 = new Article
             {
+                Id = 4,
                 Url = "http://codezine.jp/article/corner/513",
                 Title = "Amazon Web Servicesによるクラウド超入門",
                 Category = CategoryEnum.Cloud,
@@ -133,6 +143,7 @@ namespace MvcBasic.Migrations
 
             var article5 = new Article
             {
+                Id = 5,
                 Url = "http://www.buildinsider.net/web/jqueryuiref",
                 Title = "jQuery UI逆引きリファレンス",
                 Category = CategoryEnum.Reference,
@@ -144,6 +155,7 @@ namespace MvcBasic.Migrations
             context.Articles.AddOrUpdate(article5);
             context.Comments.AddOrUpdate(new Comment
             {
+                Id = 1,
                 Name = "井上鈴子",
                 Body = "用例の結果もみられるので、便利です。欲を言うとサンプルコードをダウンロードできるようにしてほしい。",
                 Updated = DateTime.Parse("2014-07-01"),
@@ -152,6 +164,7 @@ namespace MvcBasic.Migrations
 
             var article6 = new Article
             {
+                Id = 6,
                 Url = "http://www.example.com/mvc5",
                 Title = "ASP.NET MVC 入門",
                 Category = CategoryEnum.DotNet,
@@ -164,6 +177,7 @@ namespace MvcBasic.Migrations
 
             var article7 = new Article
             {
+                Id = 7,
                 Url = "http://www.example.com/azure",
                 Title = "Azure新機能TIPS",
                 Category = CategoryEnum.Cloud,
@@ -182,6 +196,7 @@ namespace MvcBasic.Migrations
 
             var author1 = new Author
             {
+                Id = 1,
                 Name = "山田太郎",
                 Email = "taro@example.com",
                 Birth = DateTime.Parse("1970-12-10"),
@@ -191,6 +206,7 @@ namespace MvcBasic.Migrations
 
             var author2 = new Author
             {
+                Id = 2,
                 Name = "鈴木久美",
                 Email = "kumi@example.com",
                 Birth = DateTime.Parse("1985-11-12"),
@@ -200,6 +216,7 @@ namespace MvcBasic.Migrations
 
             var author3 = new Author
             {
+                Id = 3,
                 Name = "佐藤敏夫",
                 Email = "toshi@example.com",
                 Birth = DateTime.Parse("1975-05-26"),
@@ -221,6 +238,7 @@ namespace MvcBasic.Migrations
 
             Person person1 = new Person()
             {
+                Id = 1,
                 Name = "Nobunaga",
                 Address = address1,
             };

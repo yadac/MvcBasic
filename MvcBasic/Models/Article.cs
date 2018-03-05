@@ -6,7 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcBasic.Models
 {
-    [Table("Contents")]
     public class Article
     {
         public int Id { get; set; }
