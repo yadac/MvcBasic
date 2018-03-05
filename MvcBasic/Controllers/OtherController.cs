@@ -36,7 +36,15 @@ namespace MvcBasic.Controllers
             article.Comments.Add(comment);
             db.SaveChanges();
 
-            return Content("Update Article!");
+            return Content("Updated Article!");
+        }
+
+        public ActionResult Delete()
+        {
+            var article = db.Articles.Find(4);
+            db.Articles.Remove(article);
+            db.SaveChanges();
+            return Content("Deleted Article!");
         }
     }
 }
