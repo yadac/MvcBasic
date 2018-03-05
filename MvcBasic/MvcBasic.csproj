@@ -156,29 +156,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803041310432_InitialCreate.cs" />
-    <Compile Include="Migrations\201803041310432_InitialCreate.Designer.cs">
-      <DependentUpon>201803041310432_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803050035511_AddAddressToAuthours.cs" />
-    <Compile Include="Migrations\201803050035511_AddAddressToAuthours.Designer.cs">
-      <DependentUpon>201803050035511_AddAddressToAuthours.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803050112305_RemoveAddressFromAuthours.cs" />
-    <Compile Include="Migrations\201803050112305_RemoveAddressFromAuthours.Designer.cs">
-      <DependentUpon>201803050112305_RemoveAddressFromAuthours.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803050540431_ChangeNotNullableOnCommentsArticleId.cs" />
-    <Compile Include="Migrations\201803050540431_ChangeNotNullableOnCommentsArticleId.Designer.cs">
-      <DependentUpon>201803050540431_ChangeNotNullableOnCommentsArticleId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803050617358_RemoveContentsTable.cs" />
-    <Compile Include="Migrations\201803050617358_RemoveContentsTable.Designer.cs">
-      <DependentUpon>201803050617358_RemoveContentsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803050628517_ChangeArticleIdPosition.cs" />
-    <Compile Include="Migrations\201803050628517_ChangeArticleIdPosition.Designer.cs">
-      <DependentUpon>201803050628517_ChangeArticleIdPosition.cs</DependentUpon>
+    <Compile Include="Migrations\201803050700059_initialcreate.cs" />
+    <Compile Include="Migrations\201803050700059_initialcreate.Designer.cs">
+      <DependentUpon>201803050700059_initialcreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -272,23 +252,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803041310432_InitialCreate.resx">
-      <DependentUpon>201803041310432_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803050035511_AddAddressToAuthours.resx">
-      <DependentUpon>201803050035511_AddAddressToAuthours.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803050112305_RemoveAddressFromAuthours.resx">
-      <DependentUpon>201803050112305_RemoveAddressFromAuthours.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803050540431_ChangeNotNullableOnCommentsArticleId.resx">
-      <DependentUpon>201803050540431_ChangeNotNullableOnCommentsArticleId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803050617358_RemoveContentsTable.resx">
-      <DependentUpon>201803050617358_RemoveContentsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803050628517_ChangeArticleIdPosition.resx">
-      <DependentUpon>201803050628517_ChangeArticleIdPosition.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803050700059_initialcreate.resx">
+      <DependentUpon>201803050700059_initialcreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

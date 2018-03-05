@@ -3,7 +3,7 @@ namespace MvcBasic.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initialcreate : DbMigration
     {
         public override void Up()
         {
@@ -41,11 +41,11 @@ namespace MvcBasic.Migrations
                         Name = c.String(),
                         Body = c.String(),
                         Updated = c.DateTime(nullable: false),
-                        Article_Id = c.Int(),
+                        ArticleId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Articles", t => t.Article_Id)
-                .Index(t => t.Article_Id);
+                .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: true)
+                .Index(t => t.ArticleId);
             
             CreateTable(
                 "dbo.Members",
@@ -90,12 +90,12 @@ namespace MvcBasic.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Comments", "Article_Id", "dbo.Articles");
+            DropForeignKey("dbo.Comments", "ArticleId", "dbo.Articles");
             DropForeignKey("dbo.AuthorArticles", "Article_Id", "dbo.Articles");
             DropForeignKey("dbo.AuthorArticles", "Author_Id", "dbo.Authors");
             DropIndex("dbo.AuthorArticles", new[] { "Article_Id" });
             DropIndex("dbo.AuthorArticles", new[] { "Author_Id" });
-            DropIndex("dbo.Comments", new[] { "Article_Id" });
+            DropIndex("dbo.Comments", new[] { "ArticleId" });
             DropTable("dbo.AuthorArticles");
             DropTable("dbo.People");
             DropTable("dbo.Members");
