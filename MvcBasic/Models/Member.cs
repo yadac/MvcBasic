@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcBasic.Models
 {
-    /* 
-     * 
-     */
-    public class Member
+    [CustomValidation(typeof(Member), "CheckMarriedEmail")]
+    public class Member : IValidatableObject
     {
         public int Id { get; set; }
         [DisplayName("氏名")]
@@ -47,5 +46,30 @@ namespace MvcBasic.Models
             return ValidationResult.Success; ;
         }
 
+        public static ValidationResult CheckMarriedEmail(Member m)
+        {
+            //if (m.Married && m.Email == null)
+            //{
+            //    return new ValidationResult("既婚者はEmailアドレスを入力してください");
+            //}
+            return ValidationResult.Success;
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var m = validationContext.ObjectInstance as Member;
+            if (m == null)
+            {
+                yield return new ValidationResult("不正");
+            }
+            if (m.Married && m.Email == null)
+            {
+                // エラーメッセージを特定のプロパティに関連付ける
+                // 関連づけない場合はmodel全体のエラーとして関連付けられる
+                yield return new ValidationResult("既婚者はEmailアドレスを入力してください", new[] { "Email" });
+            }
+            yield return ValidationResult.Success;
+
+        }
     }
 }
