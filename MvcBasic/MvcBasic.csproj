@@ -154,6 +154,7 @@
     <Compile Include="Controllers\LinqController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\OtherController.cs" />
+    <Compile Include="Extentions\BlackwordAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
