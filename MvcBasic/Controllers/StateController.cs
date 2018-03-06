@@ -35,6 +35,19 @@ namespace MvcBasic.Controllers
             return RedirectToAction("Cookie");
         }
 
+        public ActionResult SessionRecord()
+        {
+            ViewBag.Email2 = Session["email2"];
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SessionRecord(string email2)
+        {
+            Session["email2"] = email2;
+            return RedirectToAction("SessionRecord");
+        }
+
     }
 
 }

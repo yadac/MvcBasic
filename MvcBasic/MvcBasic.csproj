@@ -277,6 +277,7 @@
     <Content Include="Views\Bind\Upload.cshtml" />
     <Content Include="Views\Bind\Custom.cshtml" />
     <Content Include="Views\State\Cookie.cshtml" />
+    <Content Include="Views\State\SessionRecord.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />

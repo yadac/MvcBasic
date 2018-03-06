@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Session";
+}
+
+<h2>Session</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("email2", "メールアドレス2")
+    @Html.TextBox("email2", (string)ViewBag.Email2, new { @class = "form-control" })
+    <input type="submit" value="登録" />
+}
