@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcBasic.Models
 {
@@ -17,6 +18,10 @@ namespace MvcBasic.Models
         [DisplayName("メールアドレス")]
         [EmailAddress(ErrorMessage = "メールアドレスの形式で入力してください")]
         public string Email { get; set; }
+        [DisplayName("メールアドレス（確認）")]
+        [NotMapped]
+        [Compare("Email", ErrorMessage = "{1}と一致していません")]
+        public string EmailConfirmed { get; set; }
         [DisplayName("生年月日")]
         [Required(ErrorMessage = "{0}は必須です")]
         public DateTime Birth { get; set; }
