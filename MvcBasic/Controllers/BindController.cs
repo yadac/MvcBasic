@@ -1,4 +1,5 @@
-﻿using MvcBasic.Models;
+﻿using MvcBasic.Extentions;
+using MvcBasic.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -105,6 +106,17 @@ namespace MvcBasic.Controllers
             return Content(email);
         }
 
+
+        public ActionResult Custom()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Custom([ModelBinder(typeof(YMDBinder))] DateTime date)
+        {
+            return Content(date.ToLongDateString());
+        }
 
     }
 

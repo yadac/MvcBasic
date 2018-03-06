@@ -157,6 +157,7 @@
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
     <Compile Include="Extentions\HttpCookieValueProviderFactory.cs" />
+    <Compile Include="Extentions\YMDBinder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,6 +273,7 @@
     <Content Include="Views\Linq\Select.cshtml" />
     <Content Include="Views\Bind\CreateList.cshtml" />
     <Content Include="Views\Bind\Upload.cshtml" />
+    <Content Include="Views\Bind\Custom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />
