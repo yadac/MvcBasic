@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201803060056170_addEmailConfirmed.Designer.cs">
       <DependentUpon>201803060056170_addEmailConfirmed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803060107386_AddCustomValidationToMemo.cs" />
+    <Compile Include="Migrations\201803060107386_AddCustomValidationToMemo.Designer.cs">
+      <DependentUpon>201803060107386_AddCustomValidationToMemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -279,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803060056170_addEmailConfirmed.resx">
       <DependentUpon>201803060056170_addEmailConfirmed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803060107386_AddCustomValidationToMemo.resx">
+      <DependentUpon>201803060107386_AddCustomValidationToMemo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

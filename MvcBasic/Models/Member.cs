@@ -31,7 +31,21 @@ namespace MvcBasic.Models
         public LanguageEnum Language { get; set; }
         [DisplayName("自己紹介")]
         [StringLength(100, ErrorMessage = "{0}は{1}文字以内で入力してください")]
+        [CustomValidation(typeof(Member), "CheckBlackword")]
         public string Memo { get; set; }
+
+        public static ValidationResult CheckBlackword(string memo)
+        {
+            string[] list = new string[] { "違法", "麻薬", "毒" };
+            foreach (var word in list)
+            {
+                if (memo.Contains(word))
+                {
+                    return new ValidationResult("NGワードが含まれています");
+                }
+            }
+            return ValidationResult.Success; ;
+        }
 
     }
 }

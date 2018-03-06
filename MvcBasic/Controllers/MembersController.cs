@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using MvcBasic.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MvcBasic.Models;
 
 namespace MvcBasic.Controllers
 {
@@ -49,7 +45,7 @@ namespace MvcBasic.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Email,Birth,Married,Memo")] Member member)
+        public ActionResult Create([Bind(Include = "Id,Name,Email,EmailConfirmed,Birth,Married,Memo")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -116,7 +112,7 @@ namespace MvcBasic.Controllers
             //_db.Members.Remove(member);
 
             // don't access table to find deleting id.
-            Member member = new Member(){Id = id};
+            Member member = new Member() { Id = id };
             _db.Entry(member).State = EntityState.Deleted;
 
             _db.SaveChanges();
