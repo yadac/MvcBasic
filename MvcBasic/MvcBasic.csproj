@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\BeginController.cs" />
+    <Compile Include="Controllers\BindController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinqController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
@@ -259,9 +260,11 @@
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\Linq\Search.cshtml" />
     <Content Include="Views\Linq\Select.cshtml" />
+    <Content Include="Views\Bind\CreateList.cshtml" />
+    <Content Include="Views\Bind\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Photos\" />
     <Folder Include="Views\Other\" />
   </ItemGroup>
   <ItemGroup>

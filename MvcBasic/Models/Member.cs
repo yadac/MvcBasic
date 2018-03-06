@@ -48,14 +48,14 @@ namespace MvcBasic.Models
         //    return ValidationResult.Success; ;
         //}
 
-        //public static ValidationResult CheckMarriedEmail(Member m)
-        //{
-        //    //if (m.Married && m.Email == null)
-        //    //{
-        //    //    return new ValidationResult("既婚者はEmailアドレスを入力してください");
-        //    //}
-        //    return ValidationResult.Success;
-        //}
+        public static ValidationResult CheckMarriedEmail(Member m)
+        {
+            //if (m.Married && m.Email == null)
+            //{
+            //    return new ValidationResult("既婚者はEmailアドレスを入力してください");
+            //}
+            return ValidationResult.Success;
+        }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
