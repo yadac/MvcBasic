@@ -1,5 +1,4 @@
-﻿using MvcBasic.Extentions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -32,7 +31,7 @@ namespace MvcBasic.Models
         [DisplayName("自己紹介")]
         [StringLength(100, ErrorMessage = "{0}は{1}文字以内で入力してください")]
         // [CustomValidation(typeof(Member), "CheckBlackword")]
-        [Blackword("違法,麻薬,毒")]
+        //[Blackword("違法,麻薬,毒")]
         public string Memo { get; set; }
 
         //public static ValidationResult CheckBlackword(string memo)

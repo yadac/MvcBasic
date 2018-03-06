@@ -51,6 +51,7 @@ namespace MvcBasic.Controllers
             {
                 _db.Members.Add(member);
                 _db.SaveChanges();
+                TempData["success"] = $"{member.Name}さんを新規に登録しました。";
                 return RedirectToAction("Index");
             }
 

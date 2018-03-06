@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201803060518357_AddImage1.Designer.cs">
       <DependentUpon>201803060518357_AddImage1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803060851369_RemoveBlackworkAttribute.cs" />
+    <Compile Include="Migrations\201803060851369_RemoveBlackworkAttribute.Designer.cs">
+      <DependentUpon>201803060851369_RemoveBlackworkAttribute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803060518357_AddImage1.resx">
       <DependentUpon>201803060518357_AddImage1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803060851369_RemoveBlackworkAttribute.resx">
+      <DependentUpon>201803060851369_RemoveBlackworkAttribute.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
