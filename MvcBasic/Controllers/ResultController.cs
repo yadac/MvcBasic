@@ -74,5 +74,12 @@ namespace MvcBasic.Controllers
                 return HttpNotFound("file does not exists.");
             }
         }
+
+        public ActionResult Image(int id)
+        {
+            var img = _db.Images.Find(1);
+            if (img == null) return HttpNotFound();
+            return File(img.Data, img.Ctype, img.Name);
+        }
     }
 }
