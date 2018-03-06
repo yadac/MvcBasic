@@ -156,6 +156,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
     <Compile Include="Extentions\HttpCookieValueProviderFactory.cs" />
     <Compile Include="Extentions\YMDBinder.cs" />
@@ -275,6 +276,7 @@
     <Content Include="Views\Bind\CreateList.cshtml" />
     <Content Include="Views\Bind\Upload.cshtml" />
     <Content Include="Views\Bind\Custom.cshtml" />
+    <Content Include="Views\State\Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />
