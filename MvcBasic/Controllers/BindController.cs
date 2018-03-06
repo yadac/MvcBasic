@@ -93,5 +93,20 @@ namespace MvcBasic.Controllers
             return View();
         }
 
+        public ActionResult Provide(string email)
+        {
+            // cookie "email" を発行
+            Response.AppendCookie(new HttpCookie("email")
+            {
+                Value = "CQW15204@example.com",
+                Expires = DateTime.Now.AddDays(5)
+            });
+
+            return Content(email);
+        }
+
+
     }
+
+
 }

@@ -1,4 +1,5 @@
-﻿using MvcBasic.Migrations;
+﻿using MvcBasic.Extentions;
+using MvcBasic.Migrations;
 using MvcBasic.Models;
 using System.Data.Entity;
 using System.Web.Mvc;
@@ -24,6 +25,9 @@ namespace MvcBasic
 
             // initialize by Configuration.cs
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MvcBasicContext, Configuration>());
+
+            // 自作の値プロバイダーをアプリケーションに登録
+            ValueProviderFactories.Factories.Add(new HttpCookieValueProviderFactory());
         }
     }
 }

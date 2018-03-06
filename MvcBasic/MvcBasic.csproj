@@ -156,6 +156,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
+    <Compile Include="Extentions\HttpCookieValueProviderFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
