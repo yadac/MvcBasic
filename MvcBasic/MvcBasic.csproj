@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201803060501482_AddImage.Designer.cs">
       <DependentUpon>201803060501482_AddImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803060518357_AddImage1.cs" />
+    <Compile Include="Migrations\201803060518357_AddImage1.Designer.cs">
+      <DependentUpon>201803060518357_AddImage1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803060501482_AddImage.resx">
       <DependentUpon>201803060501482_AddImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803060518357_AddImage1.resx">
+      <DependentUpon>201803060518357_AddImage1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

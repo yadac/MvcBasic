@@ -70,6 +70,20 @@ namespace MvcBasic.Controllers
                 // アップロードファイル保存
                 data.SaveAs(Path.Combine(Server.MapPath("~/App_Data/Photos"), Path.GetFileName(f)));
                 ViewBag.Message = f + " をアップロードしました。";
+
+                // データベースにも保存
+                // バイト配列に読み込んでimageオブジェクト生成
+                byte[] bytes = new byte[data.ContentLength];
+                data.InputStream.Read(bytes, 0, data.ContentLength);
+                var img = new MvcBasic.Models.Image()
+                {
+                    Name = Path.GetFileName(f),
+                    Ctype = data.ContentType,
+                    Data = bytes
+                };
+                _db.Images.Add(img);
+                _db.SaveChanges();
+
             }
             else
             {
