@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Web.Mvc;
 
 namespace MvcBasic.Extentions
 {
-    public class BlackwordAttribute : ValidationAttribute
+    public class BlackwordAttribute : ValidationAttribute, IClientValidatable
     {
         private readonly string _options;
 
@@ -44,6 +46,19 @@ namespace MvcBasic.Extentions
                 }
             }
             return true;
+        }
+
+        public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
+        {
+            // 検証ルールを準備
+            var rule = new ModelClientValidationRule()
+            {
+                ValidationType = "blackword",
+                ErrorMessage = FormatErrorMessage(metadata.GetDisplayName()),
+            };
+
+            rule.ValidationParameters["options"] = _options;
+            yield return rule; // ルールをクライアントに渡してあげるイメージ
         }
     }
 }
