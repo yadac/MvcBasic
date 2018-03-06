@@ -1,5 +1,6 @@
 ﻿using MvcBasic.Models;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -55,6 +56,23 @@ namespace MvcBasic.Controllers
                         new XElement("pubdate", c.Published.ToUniversalTime().ToString("R")))));
             return Content(rss.ToString(), "application/rss+xml");
 
+        }
+
+        public ActionResult Download(int? id)
+        {
+            // id 未指定
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var pic = Server.MapPath($"~/App_Data/Photos/{id}.jpg");
+            if (System.IO.File.Exists(pic))
+            {
+                return File(pic, "image/jpg", "download.jpg");
+            }
+            else
+            {
+                return HttpNotFound("file does not exists.");
+            }
         }
     }
 }
