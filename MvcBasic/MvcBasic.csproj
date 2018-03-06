@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201803060138111_AddMultiCustomValidationToMember.Designer.cs">
       <DependentUpon>201803060138111_AddMultiCustomValidationToMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803060501482_AddImage.cs" />
+    <Compile Include="Migrations\201803060501482_AddImage.Designer.cs">
+      <DependentUpon>201803060501482_AddImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -190,6 +194,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CategoryEnum.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\LanguageEnum.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MvcBasicContext.cs" />
@@ -298,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803060138111_AddMultiCustomValidationToMember.resx">
       <DependentUpon>201803060138111_AddMultiCustomValidationToMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803060501482_AddImage.resx">
+      <DependentUpon>201803060501482_AddImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
