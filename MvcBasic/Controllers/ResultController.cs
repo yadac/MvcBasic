@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using System.Xml.Linq;
 
 namespace MvcBasic.Controllers
 {
@@ -27,6 +28,32 @@ namespace MvcBasic.Controllers
             var str = new StringBuilder();
             members.ForEach(m => str.Append($"{m.Id}\t{m.Name}\t{m.Email}\r\n"));
             return Content(str.ToString(), "text/tab-separated-values", Encoding.UTF8);
+
+        }
+
+        public ActionResult Rss()
+        {
+            // 出版日の降順に先頭15件取得
+            var contents = (from c in _db.Articles orderby c.Published descending select c).Take(15).ToList();
+
+            // フィードの生成
+            var rss = new XDocument(
+                new XDeclaration("1.0", "utf-8", "yes"),
+                new XElement(
+                    "rss",
+                    new XAttribute("version", "2.0"),
+                    new XElement("channel", new XElement("url", "http://www.wings.msn.to/image/wings.jpg"),
+                        new XElement("link", "http://www.wings.msn.to/"),
+                        new XElement("title", "サーバサイド技術の学び舎")),
+                    from c in contents
+                    select new XElement("item",
+                        new XElement("title", c.Title),
+                        new XElement("link", c.Url),
+                        new XElement("description", c.Description),
+                        new XElement("category", c.Category),
+                        new XElement("viewcount", c.ViewCount),
+                        new XElement("pubdate", c.Published.ToUniversalTime().ToString("R")))));
+            return Content(rss.ToString(), "application/rss+xml");
 
         }
     }
