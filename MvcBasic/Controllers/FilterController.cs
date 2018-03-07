@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcBasic.Extentions;
+using System;
 using System.Web.Mvc;
 
 namespace MvcBasic.Controllers
@@ -25,6 +26,13 @@ namespace MvcBasic.Controllers
         public ActionResult ExceptionSpare()
         {
             throw new Exception("Fatal Error Spare");
+        }
+
+        [OverrideAuthorization]
+        [TimeLimit("2018-01-01", "2018-03-31")]
+        public ActionResult Limit()
+        {
+            return Content("有効期間中です");
         }
 
     }
