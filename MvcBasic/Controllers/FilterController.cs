@@ -6,7 +6,8 @@ namespace MvcBasic.Controllers
     [Authorize]
     public class FilterController : Controller
     {
-        [OutputCache(Duration = 600)]
+        [AllowAnonymous]
+        [OutputCache(CacheProfile = "MyPolicy")]
         // GET: Filter
         public ActionResult Index()
         {
