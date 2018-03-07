@@ -160,6 +160,7 @@
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
     <Compile Include="Extentions\HttpCookieValueProviderFactory.cs" />
+    <Compile Include="Extentions\LoggingErrorAttribute.cs" />
     <Compile Include="Extentions\TimeLimitAttribute.cs" />
     <Compile Include="Extentions\YMDBinder.cs" />
     <Compile Include="Global.asax.cs">
@@ -201,6 +202,10 @@
     <Compile Include="Migrations\201803060851369_RemoveBlackworkAttribute.Designer.cs">
       <DependentUpon>201803060851369_RemoveBlackworkAttribute.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803070154482_AddErrorLog.cs" />
+    <Compile Include="Migrations\201803070154482_AddErrorLog.Designer.cs">
+      <DependentUpon>201803070154482_AddErrorLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
@@ -208,6 +213,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CategoryEnum.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\ErrorLog.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\LanguageEnum.cs" />
     <Compile Include="Models\Member.cs" />
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803060851369_RemoveBlackworkAttribute.resx">
       <DependentUpon>201803060851369_RemoveBlackworkAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803070154482_AddErrorLog.resx">
+      <DependentUpon>201803070154482_AddErrorLog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

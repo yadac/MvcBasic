@@ -1,0 +1,30 @@
+namespace MvcBasic.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class AddErrorLog : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.ErrorLogs",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Controller = c.String(),
+                        Action = c.String(),
+                        Message = c.String(),
+                        Stacktrace = c.String(),
+                        Updated = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+        }
+        
+        public override void Down()
+        {
+            DropTable("dbo.ErrorLogs");
+        }
+    }
+}

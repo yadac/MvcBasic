@@ -35,5 +35,12 @@ namespace MvcBasic.Controllers
             return Content("有効期間中です");
         }
 
+        [OverrideAuthorization]
+        [LoggingError]
+        public ActionResult Log()
+        {
+            throw new Exception("Error Raised!!");
+        }
+
     }
 }
