@@ -1,4 +1,4 @@
-using MvcBasic.Models;
+ï»¿using MvcBasic.Models;
 using System.Collections.Generic;
 
 namespace MvcBasic.Migrations
@@ -29,7 +29,7 @@ namespace MvcBasic.Migrations
                     Birth = DateTime.Parse("1980-01-02"),
                     Married = false,
                     Language = LanguageEnum.Japanese,
-                    Memo = "wƒhƒJƒxƒ“x‚ÌålŒöBƒ|ƒWƒVƒ‡ƒ“‚Í•ßèB‰E“Š¶‘ÅBVŠƒŒ§VŠƒsˆ®µƒ–’¬¶‚Ü‚ê‚Ì_“ŞìŒ§‰¡•lsˆç‚¿B",
+                    Memo = "ã€ãƒ‰ã‚«ãƒ™ãƒ³ã€ã®ä¸»äººå…¬ã€‚ãƒã‚¸ã‚·ãƒ§ãƒ³ã¯æ•æ‰‹ã€‚å³æŠ•å·¦æ‰“ã€‚æ–°æ½ŸçœŒæ–°æ½Ÿå¸‚æ—­ä¸ƒãƒ¶ç”ºç”Ÿã¾ã‚Œã®ç¥å¥ˆå·çœŒæ¨ªæµœå¸‚è‚²ã¡ã€‚",
                 },
                 new Member()
                 {
@@ -38,7 +38,7 @@ namespace MvcBasic.Migrations
                     Birth = DateTime.Parse("1753-01-01"), // sql server datetime range min 
                     Married = true,
                     Language = LanguageEnum.English,
-                    Memo = "‹•Û4”Ni1719”Nj7Œ27“úA‹IB”Ëm‚©‚çŠø–{‚É‚È‚Á‚½“cÀˆÓs‚Ì’·’j‚Æ‚µ‚Ä]ŒË‚Ì–{‹½‹|’¬‚Ì‰®•~‚Å¶‚Ü‚ê‚éB—c–¼‚Í—´•B",
+                    Memo = "äº«ä¿4å¹´ï¼ˆ1719å¹´ï¼‰7æœˆ27æ—¥ã€ç´€å·è—©å£«ã‹ã‚‰æ——æœ¬ã«ãªã£ãŸç”°æ²¼æ„è¡Œã®é•·ç”·ã¨ã—ã¦æ±Ÿæˆ¸ã®æœ¬éƒ·å¼“ç”ºã®å±‹æ•·ã§ç”Ÿã¾ã‚Œã‚‹ã€‚å¹¼åã¯é¾åŠ©ã€‚",
                 }
             };
 
@@ -48,9 +48,9 @@ namespace MvcBasic.Migrations
             var article = new Article
             {
                 Url = "http://www.buildinsider.net/web/jquerymobileref",
-                Title = "jQuery Mobile‹tˆø‚«ƒŠƒtƒ@ƒŒƒ“ƒX",
+                Title = "jQuery Mobileé€†å¼•ããƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹",
                 Category = CategoryEnum.Reference,
-                Description = "jQuery Mobile‚ÌŠî–{‹@”\‚ğ–Ú“I•ÊƒŠƒtƒ@ƒŒƒ“ƒX‚ÌŒ`®‚Å‚Ü‚Æ‚ß‚Ü‚·B",
+                Description = "jQuery Mobileã®åŸºæœ¬æ©Ÿèƒ½ã‚’ç›®çš„åˆ¥ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã®å½¢å¼ã§ã¾ã¨ã‚ã¾ã™ã€‚",
                 ViewCount = 36452,
                 Published = DateTime.Parse("2014-01-09"),
                 Released = true
@@ -59,9 +59,9 @@ namespace MvcBasic.Migrations
             var article2 = new Article
             {
                 Url = "http://codezine.jp/article/corner/518",
-                Title = "Bootstrap‚ÅƒŒƒXƒ|ƒ“ƒVƒu‚ÅƒŠƒbƒ`‚ÈƒTƒCƒg‚ğ\’z",
+                Title = "Bootstrapã§ãƒ¬ã‚¹ãƒãƒ³ã‚·ãƒ–ã§ãƒªãƒƒãƒãªã‚µã‚¤ãƒˆã‚’æ§‹ç¯‰",
                 Category = CategoryEnum.DotNet,
-                Description = "ASP.NET MVC5‚Ì‚Ğ‚ÈŒ`ƒy[ƒW‚Åg—p‚³‚ê‚Ä‚¢‚éBootstrap‚Æ‚¢‚¤ƒtƒŒ[ƒ€ƒ[ƒN‚É‚Â‚¢‚ÄĞ‰î‚µ‚Ü‚·B",
+                Description = "ASP.NET MVC5ã®ã²ãªå½¢ãƒšãƒ¼ã‚¸ã§ä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹Bootstrapã¨ã„ã†ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã«ã¤ã„ã¦ç´¹ä»‹ã—ã¾ã™ã€‚",
                 ViewCount = 9312,
                 Published = DateTime.Parse("2014-05-22"),
                 Released = true
@@ -71,9 +71,9 @@ namespace MvcBasic.Migrations
             var article3 = new Article
             {
                 Url = "http://codezine.jp/article/corner/511",
-                Title = "ASP.NET Identity“ü–å",
+                Title = "ASP.NET Identityå…¥é–€",
                 Category = CategoryEnum.DotNet,
-                Description = "V‚µ‚¢”FØA‘ŠiŠÇ—ƒVƒXƒeƒ€‚Å‚ ‚éuASP.NET Identityv‚É‚Â‚¢‚ÄA‚Ç‚Ì‚æ‚¤‚Ég‚¤‚Ì‚©A‚Ç‚ñ‚Èd‘g‚İ‚Å“®‚¢‚Ä‚¢‚é‚Ì‚©‚ğĞ‰î‚µ‚Ä‚¢‚«‚Ü‚·B",
+                Description = "æ–°ã—ã„èªè¨¼ã€è³‡æ ¼ç®¡ç†ã‚·ã‚¹ãƒ†ãƒ ã§ã‚ã‚‹ã€ŒASP.NET Identityã€ã«ã¤ã„ã¦ã€ã©ã®ã‚ˆã†ã«ä½¿ã†ã®ã‹ã€ã©ã‚“ãªä»•çµ„ã¿ã§å‹•ã„ã¦ã„ã‚‹ã®ã‹ã‚’ç´¹ä»‹ã—ã¦ã„ãã¾ã™ã€‚",
                 ViewCount = 8046,
                 Published = DateTime.Parse("2014-04-25"),
                 Released = true
@@ -82,9 +82,9 @@ namespace MvcBasic.Migrations
             var article4 = new Article
             {
                 Url = "http://codezine.jp/article/corner/513",
-                Title = "Amazon Web Services‚É‚æ‚éƒNƒ‰ƒEƒh’´“ü–å",
+                Title = "Amazon Web Servicesã«ã‚ˆã‚‹ã‚¯ãƒ©ã‚¦ãƒ‰è¶…å…¥é–€",
                 Category = CategoryEnum.Cloud,
-                Description = "Amazon Web Services‚ğg‚Á‚ÄƒNƒ‰ƒEƒhƒVƒXƒeƒ€ã‚ÉŠÈ’P‚ÈWebƒVƒXƒeƒ€‚ğ\’z‚µ‚Ä‚¢‚«‚Ü‚·B",
+                Description = "Amazon Web Servicesã‚’ä½¿ã£ã¦ã‚¯ãƒ©ã‚¦ãƒ‰ã‚·ã‚¹ãƒ†ãƒ ä¸Šã«ç°¡å˜ãªWebã‚·ã‚¹ãƒ†ãƒ ã‚’æ§‹ç¯‰ã—ã¦ã„ãã¾ã™ã€‚",
                 ViewCount = 25687,
                 Published = DateTime.Parse("2014-04-25"),
                 Released = true
@@ -93,9 +93,9 @@ namespace MvcBasic.Migrations
             var article5 = new Article
             {
                 Url = "http://www.buildinsider.net/web/jqueryuiref",
-                Title = "jQuery UI‹tˆø‚«ƒŠƒtƒ@ƒŒƒ“ƒX",
+                Title = "jQuery UIé€†å¼•ããƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹",
                 Category = CategoryEnum.Reference,
-                Description = "jQuery UI‚ÌŠî–{‹@”\‚ğ–Ú“I•ÊƒŠƒtƒ@ƒŒƒ“ƒX‚ÌŒ`®‚Å‚Ü‚Æ‚ß‚Ü‚·B",
+                Description = "jQuery UIã®åŸºæœ¬æ©Ÿèƒ½ã‚’ç›®çš„åˆ¥ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã®å½¢å¼ã§ã¾ã¨ã‚ã¾ã™ã€‚",
                 ViewCount = 56710,
                 Published = DateTime.Parse("2013-07-11"),
                 Released = true
@@ -104,9 +104,9 @@ namespace MvcBasic.Migrations
             var article6 = new Article
             {
                 Url = "http://www.example.com/mvc5",
-                Title = "ASP.NET MVC “ü–å",
+                Title = "ASP.NET MVC å…¥é–€",
                 Category = CategoryEnum.DotNet,
-                Description = "ASP.NET MVC‚ğ‚±‚ê‚©‚çn‚ß‚él‚Ì‚½‚ß‚ÉAÚ‚µ‚­’š”J‚É’iŠK‚ğ’Ç‚Á‚Ä‰ğà‚µ‚Ü‚·B",
+                Description = "ASP.NET MVCã‚’ã“ã‚Œã‹ã‚‰å§‹ã‚ã‚‹äººã®ãŸã‚ã«ã€è©³ã—ãä¸å¯§ã«æ®µéšã‚’è¿½ã£ã¦è§£èª¬ã—ã¾ã™ã€‚",
                 ViewCount = 0,
                 Published = DateTime.Parse("2015-01-20"),
                 Released = false
@@ -115,9 +115,9 @@ namespace MvcBasic.Migrations
             var article7 = new Article
             {
                 Url = "http://www.example.com/azure",
-                Title = "AzureV‹@”\TIPS",
+                Title = "Azureæ–°æ©Ÿèƒ½TIPS",
                 Category = CategoryEnum.Cloud,
-                Description = "Microsoft Azure‚ÌV‹@”\‚É‚Â‚¢‚ÄTIPSŒ`®‚ÅAg‚¢•û‚È‚Ç‚ğ‰ğà‚µ‚Ü‚·B",
+                Description = "Microsoft Azureã®æ–°æ©Ÿèƒ½ã«ã¤ã„ã¦TIPSå½¢å¼ã§ã€ä½¿ã„æ–¹ãªã©ã‚’è§£èª¬ã—ã¾ã™ã€‚",
                 ViewCount = 13469,
                 Published = DateTime.Parse("2014-04-25"),
                 Released = true
