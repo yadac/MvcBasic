@@ -18,5 +18,13 @@ namespace MvcBasic.Controllers
         {
             throw new Exception("Fatal Error");
         }
+
+        [AllowAnonymous]
+        [HandleError(View = "ErrorSpare")]  // 個別にエラーページを指定
+        public ActionResult ExceptionSpare()
+        {
+            throw new Exception("Fatal Error Spare");
+        }
+
     }
 }
