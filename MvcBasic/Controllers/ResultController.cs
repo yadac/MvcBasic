@@ -66,13 +66,9 @@ namespace MvcBasic.Controllers
 
             var pic = Server.MapPath($"~/App_Data/Photos/{id}.jpg");
             if (System.IO.File.Exists(pic))
-            {
                 return File(pic, "image/jpg", "download.jpg");
-            }
             else
-            {
                 return HttpNotFound("file does not exists.");
-            }
         }
 
         public ActionResult Image(int id)

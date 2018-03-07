@@ -206,14 +206,14 @@ namespace MvcBasic.Models
 
             #region People
 
-            Address address1 = new Address()
+            var address1 = new Address()
             {
                 Prefecture = "Aichi",
                 City = "Nagoya",
                 Street = "Route-1",
             };
 
-            Person person1 = new Person()
+            var person1 = new Person()
             {
                 Name = "Nobunaga",
                 Address = address1,

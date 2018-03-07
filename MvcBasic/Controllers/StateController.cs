@@ -14,10 +14,7 @@ namespace MvcBasic.Controllers
 
         public ActionResult Cookie()
         {
-            if (Request.Cookies["email"] != null)
-            {
-                ViewBag.Email = Request.Cookies["email"].Value;
-            }
+            if (Request.Cookies["email"] != null) ViewBag.Email = Request.Cookies["email"].Value;
 
             return View();
         }

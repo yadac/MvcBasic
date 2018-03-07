@@ -59,16 +59,8 @@ namespace MvcBasic.Models
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var m = validationContext.ObjectInstance as Member;
-            if (m == null)
-            {
-                yield return new ValidationResult("不正");
-            }
-            if (m.Married && m.Email == null)
-            {
-                // エラーメッセージを特定のプロパティに関連付ける
-                // 関連づけない場合はmodel全体のエラーとして関連付けられる
-                yield return new ValidationResult("既婚者はEmailアドレスを入力してください", new[] { "Email" });
-            }
+            if (m == null) yield return new ValidationResult("不正");
+            if (m.Married && m.Email == null) yield return new ValidationResult("既婚者はEmailアドレスを入力してください", new[] { "Email" });
             yield return ValidationResult.Success;
 
         }

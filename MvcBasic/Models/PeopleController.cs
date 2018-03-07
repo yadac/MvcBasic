@@ -22,15 +22,9 @@ namespace MvcBasic.Models
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Person person = db.People.Find(id);
-            if (person == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var person = db.People.Find(id);
+            if (person == null) return HttpNotFound();
             return View(person);
         }
 
@@ -60,15 +54,9 @@ namespace MvcBasic.Models
         // GET: People/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Person person = db.People.Find(id);
-            if (person == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var person = db.People.Find(id);
+            if (person == null) return HttpNotFound();
             return View(person);
         }
 
@@ -91,24 +79,18 @@ namespace MvcBasic.Models
         // GET: People/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Person person = db.People.Find(id);
-            if (person == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var person = db.People.Find(id);
+            if (person == null) return HttpNotFound();
             return View(person);
         }
 
         // POST: People/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost][ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Person person = db.People.Find(id);
+            var person = db.People.Find(id);
             db.People.Remove(person);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -116,10 +98,7 @@ namespace MvcBasic.Models
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
+            if (disposing) db.Dispose();
             base.Dispose(disposing);
         }
     }

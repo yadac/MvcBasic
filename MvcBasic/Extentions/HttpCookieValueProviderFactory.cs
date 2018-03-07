@@ -12,10 +12,7 @@ namespace MvcBasic.Extentions
 
             // クッキー情報をNaeValueCollectionに詰め替え
             var cookies = controllerContext.HttpContext.Request.Cookies;
-            foreach (var key in cookies.AllKeys)
-            {
-                list.Add(key, cookies[key].Value);
-            }
+            foreach (var key in cookies.AllKeys) list.Add(key, cookies[key].Value);
 
             // NameValueCollectionから値プロバイダーを生成
             return new NameValueCollectionValueProvider(list, CultureInfo.CurrentCulture);

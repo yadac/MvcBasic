@@ -49,13 +49,9 @@ namespace MvcBasic.Models
             get
             {
                 if (Description.Length > 50)
-                {
                     return Description.Substring(0, 50);
-                }
                 else
-                {
                     return Description;
-                }
             }
         }
     }

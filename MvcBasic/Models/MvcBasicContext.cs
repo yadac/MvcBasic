@@ -11,6 +11,6 @@ namespace MvcBasic.Models
         public DbSet<Image> Images { get; set; }
         public DbSet<ErrorLog> ErrorLogs { get; set; }
 
-        public System.Data.Entity.DbSet<MvcBasic.Models.Person> People { get; set; }
+        public DbSet<Person> People { get; set; }
     }
 }

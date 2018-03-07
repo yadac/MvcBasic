@@ -18,7 +18,7 @@ namespace MvcBasic.Extentions
             // 入力されたカンマ区切りのNGワード
             _options = options;
             // エラーメッセージ
-            this.ErrorMessage = @"{0}には{1}を含むことはできません";
+            ErrorMessage = @"{0}には{1}を含むことはできません";
         }
 
         public override string FormatErrorMessage(string name)
@@ -37,14 +37,9 @@ namespace MvcBasic.Extentions
             // 入力がある場合のみ検証
             if (value == null) return true;
 
-            string[] list = _options.Split(',');
+            var list = _options.Split(',');
             foreach (var word in list)
-            {
-                if (((string)value).Contains(word))
-                {
-                    return false;
-                }
-            }
+                if (((string)value).Contains(word)) return false;
             return true;
         }
 

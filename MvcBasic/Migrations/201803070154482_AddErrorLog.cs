@@ -11,12 +11,12 @@ namespace MvcBasic.Migrations
                 "dbo.ErrorLogs",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(false, true),
                         Controller = c.String(),
                         Action = c.String(),
                         Message = c.String(),
                         Stacktrace = c.String(),
-                        Updated = c.DateTime(nullable: false),
+                        Updated = c.DateTime(false),
                     })
                 .PrimaryKey(t => t.Id);
             
