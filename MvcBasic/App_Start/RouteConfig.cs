@@ -21,7 +21,8 @@ namespace MvcBasic
             routes.MapRoute(
                 name: "Blog",
                 url: "Blog/{year}",
-                defaults: new { controller = "Home", action = "Index", year = UrlParameter.Optional, }
+                defaults: new { controller = "Home", action = "Index", year = UrlParameter.Optional, },
+                namespaces: new[] { "MvcBasic.Controllers" }
             );
 
             // RouteTest
@@ -42,13 +43,15 @@ namespace MvcBasic
                     month = @"\d{1,2}",
                     day = @"\d{1,2}",
                     verbs = new HttpMethodConstraint("GET"),
-                }
+                },
+                namespaces: new[] { "MvcBasic.Controllers" }
             );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "MvcBasic.Controllers" }
             );
 
         }
