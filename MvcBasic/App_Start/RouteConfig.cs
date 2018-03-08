@@ -27,7 +27,14 @@ namespace MvcBasic
                     action = "Test",
                     year = DateTime.Now.Year,
                     month = DateTime.Now.Month,
-                    day = DateTime.Now.Day
+                    day = DateTime.Now.Day,
+                },
+                constraints: new
+                {
+                    year = @"\d{4}",
+                    month = @"\d{1,2}",
+                    day = @"\d{1,2}",
+                    verbs = new HttpMethodConstraint("GET"),
                 }
             );
 
