@@ -16,10 +16,20 @@
 @section scripts
 {
     <script>
+
+        // フェードアウトからのフェードイン
         $(function () {
             $('#books img.other')
                 .fadeOut(3000)
                 .fadeIn(3000);
         });
+
+        // クリックした画像をフェードアウト
+        $(function() {
+            $('img').click(function(e) {
+                $(this).fadeOut(3000);
+            });
+        });
+
     </script>
 }
