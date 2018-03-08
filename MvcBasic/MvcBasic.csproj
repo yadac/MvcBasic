@@ -157,7 +157,9 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
+    <Compile Include="Controllers\SelectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Extentions\ReferrerAttribute.cs" />
     <Compile Include="Migrations\201803080044168_SomethingChange.cs" />
     <Compile Include="Migrations\201803080044168_SomethingChange.Designer.cs">
       <DependentUpon>201803080044168_SomethingChange.cs</DependentUpon>
@@ -299,6 +301,7 @@
     <Content Include="Views\State\SessionRecord.cshtml" />
     <Content Include="Views\Shared\ErrorSpare.cshtml" />
     <Content Include="Views\Home\_CurrentTimePartial.cshtml" />
+    <Content Include="Views\Selector\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />
