@@ -84,7 +84,8 @@ namespace MvcBasic.Controllers
         }
 
         // POST: Members/Delete/5
-        [HttpPost][ActionName("Delete")]
+        [HttpPost]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -103,6 +104,12 @@ namespace MvcBasic.Controllers
         {
             if (disposing) _db.Dispose();
             base.Dispose(disposing);
+        }
+
+        [NonAction]
+        public void EampleHelperMethod()
+        {
+
         }
     }
 }

@@ -10,6 +10,7 @@ namespace MvcBasic.Models
         public DbSet<Author> Authors { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<ErrorLog> ErrorLogs { get; set; }
+        public DbSet<AccessLog> AccessLogs { get; set; }
 
         public DbSet<Person> People { get; set; }
     }

@@ -158,10 +158,13 @@
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Models\AccessLog.cs" />
+    <Compile Include="Extentions\AccessLogAttribute.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
     <Compile Include="Extentions\HttpCookieValueProviderFactory.cs" />
     <Compile Include="Extentions\LoggingErrorAttribute.cs" />
     <Compile Include="Extentions\TimeLimitAttribute.cs" />
+    <Compile Include="Extentions\TimeLimitException.cs" />
     <Compile Include="Extentions\YMDBinder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
