@@ -14,5 +14,10 @@ namespace MvcBasic.Controllers
         {
             return View();
         }
+
+        public ActionResult Jquerymobile()
+        {
+            return View("Jquerymobile.Mobile");
+        }
     }
 }

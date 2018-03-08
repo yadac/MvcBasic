@@ -36,6 +36,7 @@ namespace MvcBasic
                       "~/Content/site.css"));
 
 
+            // JQuery UI
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
             //bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
@@ -43,6 +44,13 @@ namespace MvcBasic
             // テーマ変更(Theme -> Contentに移動)
             bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
                         "~/Content/themes/redmond/jquery-ui-1.10.3.custom.min.css"));
+
+            // JQuery Mobile
+            bundles.Add(new ScriptBundle("~/bundles/jquerymobile").Include(
+                "~/Scripts/jquery.mobile-{version}.js"));
+            bundles.Add(new StyleBundle("~/Content/jquerymobile").Include(
+                        "~/Content/jquery.mobile*"));
+
 
             // bundle & minification disabled
             BundleTable.EnableOptimizations = true;
