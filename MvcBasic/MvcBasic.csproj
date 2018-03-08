@@ -157,6 +157,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\SelectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Extentions\ReferrerAttribute.cs" />
@@ -308,6 +309,7 @@
     <Folder Include="Views\Filter\" />
     <Folder Include="Views\Other\" />
     <Folder Include="Views\Result\" />
+    <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

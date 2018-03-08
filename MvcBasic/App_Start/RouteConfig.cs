@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace MvcBasic
@@ -14,6 +15,20 @@ namespace MvcBasic
                 name: "Blog",
                 url: "Blog/{year}",
                 defaults: new { controller = "Home", action = "Index", year = UrlParameter.Optional, }
+            );
+
+            // RouteTest
+            routes.MapRoute(
+                name: "Route",
+                url: "Route/Test/{year}/{month}/{day}",
+                defaults: new
+                {
+                    controller = "Route",
+                    action = "Test",
+                    year = DateTime.Now.Year,
+                    month = DateTime.Now.Month,
+                    day = DateTime.Now.Day
+                }
             );
 
             routes.MapRoute(
