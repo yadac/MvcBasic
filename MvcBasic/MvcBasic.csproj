@@ -161,6 +161,7 @@
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\SelectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Extentions\InArrayConstraint.cs" />
     <Compile Include="Extentions\ReferrerAttribute.cs" />
     <Compile Include="Migrations\201803080044168_SomethingChange.cs" />
     <Compile Include="Migrations\201803080044168_SomethingChange.Designer.cs">

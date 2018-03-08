@@ -16,7 +16,7 @@ namespace MvcBasic.Controllers
             return Content("not implemented");
         }
 
-        [Route("Attr/Articles/{category?}")]
+        [Route("Attr/Articles/{category:inArray(Database,Program,Cloud)}")]
         public ActionResult ShowByCategory(string category)
         {
             var list = from a in _db.Articles select a;

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MvcBasic.Extentions;
+using System;
 using System.Web.Mvc;
+using System.Web.Mvc.Routing;
 using System.Web.Routing;
 
 namespace MvcBasic
@@ -10,8 +12,10 @@ namespace MvcBasic
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            // 属性ルートの有効化
-            routes.MapMvcAttributeRoutes();
+            // 属性ルートの有効化（制約条件付き）
+            var resolver = new DefaultInlineConstraintResolver();
+            resolver.ConstraintMap.Add("inArray", typeof(InArrayConstraint));
+            routes.MapMvcAttributeRoutes(resolver);
 
             // 特殊ルートを先に記述
             routes.MapRoute(
