@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Library";
+}
+
+<h2>Library</h2>
+
+
+<div id="books">
+    <p><img src="@Url.Content("~/Content/Imgs/1orange.png")" class="other" width="100" height="100" /></p>
+    <p><img src="@Url.Content("~/Content/Imgs/2orange.png")" width="100" height="100" /></p>
+    <p><img src="@Url.Content("~/Content/Imgs/3orange.png")" class="other" width="100" height="100" /></p>
+    <p><img src="@Url.Content("~/Content/Imgs/4orange.png")" width="100" height="100" /></p>
+    <p><img src="@Url.Content("~/Content/Imgs/5orange.png")" class="other" width="100" height="100" /></p>
+</div>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            $('#books img.other')
+                .fadeOut(3000)
+                .fadeIn(3000);
+        });
+    </script>
+}
