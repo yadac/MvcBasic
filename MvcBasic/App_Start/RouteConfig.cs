@@ -10,6 +10,9 @@ namespace MvcBasic
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // 属性ルートの有効化
+            routes.MapMvcAttributeRoutes();
+
             // 特殊ルートを先に記述
             routes.MapRoute(
                 name: "Blog",
