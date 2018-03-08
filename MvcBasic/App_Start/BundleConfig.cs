@@ -38,8 +38,11 @@ namespace MvcBasic
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
+            //bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
+            //            "~/Content/themes/base/jquery-ui.min.css"));
+            // テーマ変更(Theme -> Contentに移動)
             bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
-                        "~/Content/themes/base/jquery-ui.min.css")); // 参考書と違うパス
+                        "~/Content/themes/redmond/jquery-ui-1.10.3.custom.min.css"));
 
             // bundle & minification disabled
             BundleTable.EnableOptimizations = true;
