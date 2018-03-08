@@ -158,6 +158,10 @@
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Migrations\201803080044168_SomethingChange.cs" />
+    <Compile Include="Migrations\201803080044168_SomethingChange.Designer.cs">
+      <DependentUpon>201803080044168_SomethingChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccessLog.cs" />
     <Compile Include="Extentions\AccessLogAttribute.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
@@ -345,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803070154482_AddErrorLog.resx">
       <DependentUpon>201803070154482_AddErrorLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803080044168_SomethingChange.resx">
+      <DependentUpon>201803080044168_SomethingChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

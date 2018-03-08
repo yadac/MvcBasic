@@ -100,6 +100,12 @@ namespace MvcBasic.Controllers
             return RedirectToAction("Index");
         }
 
+        [ActionName("Hello-Message")]
+        public ActionResult About()
+        {
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing) _db.Dispose();
