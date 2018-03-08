@@ -35,6 +35,12 @@ namespace MvcBasic
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
+            bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
+                        "~/Content/themes/base/jquery-ui.min.css")); // 参考書と違うパス
+
             // bundle & minification disabled
             BundleTable.EnableOptimizations = true;
 
