@@ -7,8 +7,16 @@ namespace MvcBasic
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            // change from CDN (Contents Delivery Network)
+            bundles.UseCdn = true;
+            var jq = new ScriptBundle("~/bundles/jquery", "//code.jquery.com/ui/1.12.1/jquery-ui.min.js")
+                .Include("~/Scripts/jquery-{version}.js");
+            jq.CdnFallbackExpression = "window.jQuery";
+            bundles.Add(jq);
+
+
+            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            //            "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*",
@@ -26,6 +34,10 @@ namespace MvcBasic
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            // bundle & minification disabled
+            BundleTable.EnableOptimizations = true;
+
         }
     }
 }
