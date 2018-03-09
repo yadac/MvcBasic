@@ -12,6 +12,7 @@ namespace MvcBasic.Models
         public DbSet<ErrorLog> ErrorLogs { get; set; }
         public DbSet<AccessLog> AccessLogs { get; set; }
 
+        public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Person> People { get; set; }
     }
 }

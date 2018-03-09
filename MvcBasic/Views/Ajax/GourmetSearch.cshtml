@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "GourmetSearch";
+}
+
+<h2>GourmetSearch</h2>
+
+
+<form>
+    <label for="keyword">キーワード：</label>
+    <input id="keyword" name="keyword" type="text" size="15"/>
+    <input id="search" type="button" value="検索"/>
+    <a href="http://api.gnavi.co.jp/api/scope/" target="_blank">
+        <img src="http://api.gnavi.co.jp/api/img/credit/api_265_65.gif" width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
+    </a>
+</form>
+
+
+
+<div id="result"></div>
+
+@section scripts
+{
+    <script>
+        $(function() {
+            $('#search').click(function(e) {
+                $('#result').load('/Ajax/GourmetResult', { keyword: $('#keyword').val() });
+            });
+        });
+    </script>
+}

@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201803080044168_SomethingChange.Designer.cs">
       <DependentUpon>201803080044168_SomethingChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803090304067_AddRestaurant.cs" />
+    <Compile Include="Migrations\201803090304067_AddRestaurant.Designer.cs">
+      <DependentUpon>201803090304067_AddRestaurant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccessLog.cs" />
     <Compile Include="Extentions\AccessLogAttribute.cs" />
     <Compile Include="Extentions\BlackwordAttribute.cs" />
@@ -239,6 +243,7 @@
     <Compile Include="Models\MvcBasicInitializer.cs" />
     <Compile Include="Models\PeopleController.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -535,6 +540,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Area\Index.cshtml" />
+    <Content Include="mvcbasic.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -625,6 +631,8 @@
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
     <Content Include="Views\Ajax\AjaxLink.cshtml" />
     <Content Include="Views\Ajax\_AjaxSearch.cshtml" />
+    <Content Include="Views\Ajax\GourmetSearch.cshtml" />
+    <Content Include="Views\Ajax\_GourmetResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />
@@ -681,6 +689,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803080044168_SomethingChange.resx">
       <DependentUpon>201803080044168_SomethingChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803090304067_AddRestaurant.resx">
+      <DependentUpon>201803090304067_AddRestaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
