@@ -73,5 +73,12 @@ namespace MvcBasic.Controllers
 
             return View("GourmetSearch");
         }
+
+        public ActionResult JsonAccess()
+        {
+            var list = EnumHelper.GetSelectList(typeof(CategoryEnum));
+            return View(list);
+
+        }
     }
 }

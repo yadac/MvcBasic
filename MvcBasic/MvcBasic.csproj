@@ -634,6 +634,7 @@
     <Content Include="Views\Ajax\_AjaxSearch.cshtml" />
     <Content Include="Views\Ajax\GourmetSearch.cshtml" />
     <Content Include="Views\Ajax\_GourmetResult.cshtml" />
+    <Content Include="Views\Ajax\JsonAccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />
