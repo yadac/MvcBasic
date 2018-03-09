@@ -151,6 +151,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AreaController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
@@ -622,6 +623,8 @@
     <Content Include="Views\Library\Jqueryui.cshtml" />
     <Content Include="Views\Library\Jquerymobile.Mobile.cshtml" />
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+    <Content Include="Views\Ajax\AjaxLink.cshtml" />
+    <Content Include="Views\Ajax\_AjaxSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Photos\" />
