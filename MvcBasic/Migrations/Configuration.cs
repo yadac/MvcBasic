@@ -6,14 +6,14 @@ namespace MvcBasic.Migrations
     using System;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MvcBasic.Models.MvcBasicContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MvcBasicContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MvcBasic.Models.MvcBasicContext context)
+        protected override void Seed(MvcBasicContext context)
         {
             //  This method will be called after migrating to the latest version.
 

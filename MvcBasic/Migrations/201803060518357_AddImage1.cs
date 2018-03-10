@@ -11,7 +11,7 @@ namespace MvcBasic.Migrations
                 "dbo.Images",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(false, true),
                         Name = c.String(),
                         Ctype = c.String(),
                         Data = c.Binary(),

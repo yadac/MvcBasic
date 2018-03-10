@@ -10,14 +10,14 @@ namespace MvcBasic.Migrations
                 "dbo.Articles",
                 c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
+                    Id = c.Int(false, true),
                     Url = c.String(),
                     Title = c.String(),
-                    Category = c.Int(nullable: false),
+                    Category = c.Int(false),
                     Description = c.String(),
-                    ViewCount = c.Int(nullable: false),
-                    Published = c.DateTime(nullable: false),
-                    Released = c.Boolean(nullable: false),
+                    ViewCount = c.Int(false),
+                    Published = c.DateTime(false),
+                    Released = c.Boolean(false),
                 })
                 .PrimaryKey(t => t.Id);
 
@@ -25,10 +25,10 @@ namespace MvcBasic.Migrations
                 "dbo.Authors",
                 c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
+                    Id = c.Int(false, true),
                     Name = c.String(),
                     Email = c.String(),
-                    Birth = c.DateTime(nullable: false),
+                    Birth = c.DateTime(false),
                 })
                 .PrimaryKey(t => t.Id);
 
@@ -36,26 +36,26 @@ namespace MvcBasic.Migrations
                 "dbo.Comments",
                 c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
+                    Id = c.Int(false, true),
                     Name = c.String(),
                     Body = c.String(),
-                    Updated = c.DateTime(nullable: false),
-                    ArticleId = c.Int(nullable: false),
+                    Updated = c.DateTime(false),
+                    ArticleId = c.Int(false),
                 })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: true)
+                .ForeignKey("dbo.Articles", t => t.ArticleId, true)
                 .Index(t => t.ArticleId);
 
             CreateTable(
                 "dbo.Members",
                 c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
+                    Id = c.Int(false, true),
                     Name = c.String(),
                     Email = c.String(),
-                    Birth = c.DateTime(nullable: false),
-                    Married = c.Boolean(nullable: false),
-                    Language = c.Int(nullable: false),
+                    Birth = c.DateTime(false),
+                    Married = c.Boolean(false),
+                    Language = c.Int(false),
                     Memo = c.String(),
                 })
                 .PrimaryKey(t => t.Id);
@@ -64,7 +64,7 @@ namespace MvcBasic.Migrations
                 "dbo.People",
                 c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
+                    Id = c.Int(false, true),
                     Name = c.String(),
                     Address_Prefecture = c.String(),
                     Address_City = c.String(),
@@ -76,12 +76,12 @@ namespace MvcBasic.Migrations
                 "dbo.AuthorArticles",
                 c => new
                 {
-                    Author_Id = c.Int(nullable: false),
-                    Article_Id = c.Int(nullable: false),
+                    Author_Id = c.Int(false),
+                    Article_Id = c.Int(false),
                 })
                 .PrimaryKey(t => new { t.Author_Id, t.Article_Id })
-                .ForeignKey("dbo.Authors", t => t.Author_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Articles", t => t.Article_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Authors", t => t.Author_Id, true)
+                .ForeignKey("dbo.Articles", t => t.Article_Id, true)
                 .Index(t => t.Author_Id)
                 .Index(t => t.Article_Id);
 

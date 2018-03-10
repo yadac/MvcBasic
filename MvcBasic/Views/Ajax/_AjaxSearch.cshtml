@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MvcBasic.Models.Article>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Url)</th>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+        <th>@Html.DisplayNameFor(model => model.Published)</th>
+    </tr>
+
+    @foreach (var a in Model)
+    {
+        <tr>
+            <th>@Html.DisplayFor(item => a.Url)</th>
+            <th>@Html.DisplayFor(item => a.Title)</th>
+            <th>@Html.DisplayFor(item => a.Published)</th>
+        </tr>
+    }
+</table>

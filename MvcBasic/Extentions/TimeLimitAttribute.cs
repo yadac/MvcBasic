@@ -13,8 +13,8 @@ namespace MvcBasic.Extentions
             set
             {
                 var b = DateTime.Parse(value);
-                if (b >= this._end) throw new ArgumentException("Begin parameter is invalid");
-                this._begin = b;
+                if (b >= _end) throw new ArgumentException("Begin parameter is invalid");
+                _begin = b;
             }
         }
         public string End
@@ -22,16 +22,16 @@ namespace MvcBasic.Extentions
             set
             {
                 var e = DateTime.Parse(value);
-                if (e <= this._begin) throw new ArgumentException("End parameter is invalid");
-                this._end = e;
+                if (e <= _begin) throw new ArgumentException("End parameter is invalid");
+                _end = e;
             }
         }
 
 
         public TimeLimitAttribute(string begin, string end)
         {
-            this.Begin = begin;
-            this.End = end;
+            Begin = begin;
+            End = end;
         }
 
 
@@ -40,19 +40,11 @@ namespace MvcBasic.Extentions
             if (filterContext == null) throw new ArgumentException("filtercontext");
 
             var current = DateTime.Now;
-            if (current < this._begin || current > this._end)
+            if (current < _begin || current > _end)
             {
-                var message = $"このページは {this._begin.ToLongDateString()} から {this._end.ToLongDateString()} までの期間のみ有効です";
+                var message = $"このページは {_begin.ToLongDateString()} から {_end.ToLongDateString()} までの期間のみ有効です";
                 throw new TimeLimitException(message);
             }
-        }
-    }
-
-    [Serializable]
-    public class TimeLimitException : Exception
-    {
-        public TimeLimitException(string message) : base(message)
-        {
         }
     }
 }

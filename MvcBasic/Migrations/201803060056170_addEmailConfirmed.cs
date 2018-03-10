@@ -7,7 +7,7 @@ namespace MvcBasic.Migrations
     {
         public override void Up()
         {
-            AlterColumn("dbo.Members", "Name", c => c.String(nullable: false));
+            AlterColumn("dbo.Members", "Name", c => c.String(false));
             AlterColumn("dbo.Members", "Memo", c => c.String(maxLength: 100));
         }
         

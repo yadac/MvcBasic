@@ -74,9 +74,9 @@ namespace MvcBasic.Controllers
 
                 // データベースにも保存
                 // バイト配列に読み込んでimageオブジェクト生成
-                byte[] bytes = new byte[data.ContentLength];
+                var bytes = new byte[data.ContentLength];
                 data.InputStream.Read(bytes, 0, data.ContentLength);
-                var img = new MvcBasic.Models.Image()
+                var img = new Image()
                 {
                     Name = Path.GetFileName(f),
                     Ctype = data.ContentType,

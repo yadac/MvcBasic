@@ -28,7 +28,7 @@ namespace MvcBasic.Controllers
             };
 
             // return Content("Hello World!!");
-            Member meber = _db.Members.Find(1);
+            var meber = _db.Members.Find(1);
             return View(meber);
         }
 

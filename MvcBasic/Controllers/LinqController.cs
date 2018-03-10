@@ -17,15 +17,9 @@ namespace MvcBasic.Controllers
             var articles = from a in _db.Articles select a;
 
             // if keyword exists
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                articles = articles.Where(a => a.Title.Contains(keyword));
-            }
+            if (!string.IsNullOrEmpty(keyword)) articles = articles.Where(a => a.Title.Contains(keyword));
 
-            if (released.HasValue && released.Value)
-            {
-                articles = articles.Where(a => a.Released);
-            }
+            if (released.HasValue && released.Value) articles = articles.Where(a => a.Released);
 
             return View(articles);
         }
@@ -38,7 +32,7 @@ namespace MvcBasic.Controllers
                            {
                                Title = a.Title.Substring(0, 10),
                                Viewcount = (int)Math.Ceiling(a.ViewCount / 1000.0),
-                               Released = (a.Released ? "公開中" : "公開予定"),
+                               Released = a.Released ? "公開中" : "公開予定",
                            };
             return View(articles);
         }

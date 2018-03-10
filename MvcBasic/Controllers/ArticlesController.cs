@@ -20,15 +20,9 @@ namespace MvcBasic.Controllers
         // GET: Articles/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Article article = db.Articles.Find(id);
-            if (article == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var article = db.Articles.Find(id);
+            if (article == null) return HttpNotFound();
             return View(article);
         }
 
@@ -58,15 +52,9 @@ namespace MvcBasic.Controllers
         // GET: Articles/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Article article = db.Articles.Find(id);
-            if (article == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var article = db.Articles.Find(id);
+            if (article == null) return HttpNotFound();
             return View(article);
         }
 
@@ -96,24 +84,18 @@ namespace MvcBasic.Controllers
         // GET: Articles/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Article article = db.Articles.Find(id);
-            if (article == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var article = db.Articles.Find(id);
+            if (article == null) return HttpNotFound();
             return View(article);
         }
 
         // POST: Articles/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost][ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Article article = db.Articles.Find(id);
+            var article = db.Articles.Find(id);
             db.Articles.Remove(article);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -121,13 +103,13 @@ namespace MvcBasic.Controllers
 
         public ActionResult Navigation(int id)
         {
-            Article article = db.Articles.Find(id);
+            var article = db.Articles.Find(id);
             return View(article);
         }
 
         public ActionResult NavigationWithComment(int id)
         {
-            Comment comment = db.Comments.Find(id);
+            var comment = db.Comments.Find(id);
             return View(comment);
             ;
         }
@@ -146,10 +128,7 @@ namespace MvcBasic.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
+            if (disposing) db.Dispose();
             base.Dispose(disposing);
         }
     }

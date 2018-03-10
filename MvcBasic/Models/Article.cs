@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -34,28 +35,27 @@ namespace MvcBasic.Models
         [DisplayName("公開済")]
         public bool Released { get; set; }
 
+        [JsonIgnore]
         [DisplayName("コメント")]
         public virtual ICollection<Comment> Comments { get; set; }
 
+        [JsonIgnore]
         [DisplayName("著者")]
         public virtual ICollection<Author> Authors { get; set; }
 
         [Timestamp]
         public byte[] Timestamp { get; set; } // store version number
 
+        //[JsonIgnore]
         [NotMapped]
         public string Summary
         {
             get
             {
                 if (Description.Length > 50)
-                {
                     return Description.Substring(0, 50);
-                }
                 else
-                {
                     return Description;
-                }
             }
         }
     }

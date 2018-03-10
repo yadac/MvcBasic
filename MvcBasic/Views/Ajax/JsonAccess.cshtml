@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SelectListItem>
+
+@{
+    ViewBag.Title = "JsonAccess";
+}
+
+<h2>JsonAccess</h2>
+
+<div class="btn-group">
+    @foreach (var item in Model)
+    {
+        <button type="button" class="btn btn-info btn-search" data-category="@item.Value">@item.Text</button>
+    }
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>URL</th>
+            <th>タイトル</th>
+            <th>刊行日</th>
+        </tr>
+    </thead>
+    <tbody id="result"></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            $('.btn-search').click(function (e) {
+                $.getJSON('/api/articles/' + $(this).data('category').val())
+                    .done(function (data) {
+                        $('#result').empty();
+                        $.each(data,
+                            function () {
+                                $('#result').append(
+                                    $('<tr></tr>')
+                                        .append($('<tr></tr>').text(this.Url))
+                                        .append($('<tr></tr>').text(this.Title))
+                                        .append($('<tr></tr>').text(this.Published))
+                                );
+                            });
+                    })
+                    .fail(function (xhr, status, error) {
+                        window.alert('エラー発生：' + error);
+                    });
+            });
+        });
+    </script>
+}

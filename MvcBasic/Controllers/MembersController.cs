@@ -19,18 +19,9 @@ namespace MvcBasic.Controllers
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                // return only http status code. badrequest = 400
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Member member = _db.Members.Find(id);
-            if (member == null)
-            {
-                // this method is more smarter than creating a new HttpStatusCodeResult instance.
-                // "helper method"
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var member = _db.Members.Find(id);
+            if (member == null) return HttpNotFound();
             return View(member);
         }
 
@@ -61,15 +52,9 @@ namespace MvcBasic.Controllers
         // GET: Members/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Member member = _db.Members.Find(id);
-            if (member == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var member = _db.Members.Find(id);
+            if (member == null) return HttpNotFound();
             return View(member);
         }
 
@@ -92,20 +77,15 @@ namespace MvcBasic.Controllers
         // GET: Members/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Member member = _db.Members.Find(id);
-            if (member == null)
-            {
-                return HttpNotFound();
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var member = _db.Members.Find(id);
+            if (member == null) return HttpNotFound();
             return View(member);
         }
 
         // POST: Members/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -113,20 +93,29 @@ namespace MvcBasic.Controllers
             //_db.Members.Remove(member);
 
             // don't access table to find deleting id.
-            Member member = new Member() { Id = id };
+            var member = new Member() { Id = id };
             _db.Entry(member).State = EntityState.Deleted;
 
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        [ActionName("Hello-Message")]
+        public ActionResult About()
+        {
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                _db.Dispose();
-            }
+            if (disposing) _db.Dispose();
             base.Dispose(disposing);
+        }
+
+        [NonAction]
+        public void EampleHelperMethod()
+        {
+
         }
     }
 }

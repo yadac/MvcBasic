@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MvcBasic.Models.Article>
+
+@{
+    ViewBag.Title = "ShowByCategory";
+}
+
+<h2>ShowByCategory</h2>
+
+
+<p>@TempData["cat"]</p>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(item => a.Title)</td>
+        </tr>
+    }
+</table>
