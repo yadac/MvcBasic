@@ -1,4 +1,7 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBasic.Controllers
@@ -22,14 +25,6 @@ namespace MvcBasic.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
-
-        [ChildActionOnly]
-        [OutputCache(Duration = 60)]
-        public ActionResult CurrentTime()
-        {
-            // フラグメントキャッシュ
-            return PartialView("_CurrentTimePartial", DateTime.Now);
         }
     }
 }

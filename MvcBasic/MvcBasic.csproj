@@ -207,6 +207,7 @@
       <DependentUpon>201803070154482_AddErrorLog.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleView.cs" />
@@ -214,8 +215,10 @@
     <Compile Include="Models\CategoryEnum.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ErrorLog.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\LanguageEnum.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MvcBasicContext.cs" />
     <Compile Include="Models\MvcBasicInitializer.cs" />
