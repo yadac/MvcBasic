@@ -177,6 +177,7 @@
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Extentions\InArrayConstraint.cs" />
     <Compile Include="Extentions\ReferrerAttribute.cs" />
+    <Compile Include="Helpers\MyHelper.cs" />
     <Compile Include="Migrations\201803080044168_SomethingChange.cs" />
     <Compile Include="Migrations\201803080044168_SomethingChange.Designer.cs">
       <DependentUpon>201803080044168_SomethingChange.cs</DependentUpon>

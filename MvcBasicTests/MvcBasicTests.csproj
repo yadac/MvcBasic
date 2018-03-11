@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Extentions\ReferrerAttributeTests.cs" />
     <Compile Include="Extentions\TimeLimitAttributeTests.cs" />
+    <Compile Include="Helpers\MyHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
