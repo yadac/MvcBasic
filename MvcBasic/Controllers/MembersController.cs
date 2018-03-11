@@ -14,9 +14,11 @@ namespace MvcBasic.Controllers
         /// <summary>
         /// default constructor for product.
         /// </summary>
-        public MembersController() : this(new MemberRepository())
-        {
-        }
+        //public MembersController() : this(new MemberRepository())
+        //{
+        //    // its not good, because use DI.
+        //    // comment out, change to use di container (Ninject)
+        //}
 
         /// <summary>
         /// constructor for test.
