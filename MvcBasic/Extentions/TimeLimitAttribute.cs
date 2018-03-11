@@ -43,7 +43,8 @@ namespace MvcBasic.Extentions
             if (current < _begin || current > _end)
             {
                 var message = $"このページは {_begin.ToLongDateString()} から {_end.ToLongDateString()} までの期間のみ有効です";
-                throw new TimeLimitException(message);
+                //throw new TimeLimitException(message);
+                filterContext.Result = new ContentResult(){Content = message};
             }
         }
     }
