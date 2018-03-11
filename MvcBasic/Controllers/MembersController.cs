@@ -8,12 +8,33 @@ namespace MvcBasic.Controllers
 {
     public class MembersController : Controller
     {
+        // repository
+        private readonly IMemberRepository _rep;
+
+        /// <summary>
+        /// default constructor for product.
+        /// </summary>
+        public MembersController() : this(new MemberRepository())
+        {
+        }
+
+        /// <summary>
+        /// constructor for test.
+        /// </summary>
+        /// <param name="rep"></param>
+        public MembersController(IMemberRepository rep)
+        {
+            // is it okay for that test code have remained in production code?
+            _rep = rep;
+        }
+
         private readonly MvcBasicContext _db = new MvcBasicContext();
 
         // GET: Members
         public ActionResult Index()
         {
-            return View(_db.Members.ToList());
+            // return View(_db.Members.ToList());
+            return View(_rep.GetAll());
         }
 
         // GET: Members/Details/5
@@ -40,8 +61,10 @@ namespace MvcBasic.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Members.Add(member);
-                _db.SaveChanges();
+                //_db.Members.Add(member);
+                //_db.SaveChanges();
+                _rep.Create(member);
+
                 TempData["success"] = $"{member.Name}さんを新規に登録しました。";
                 return RedirectToAction("Index");
             }
