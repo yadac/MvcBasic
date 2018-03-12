@@ -5,3 +5,15 @@
 <h2>TS Confirmation</h2>
 
 <script type="text/javascript" src="~/Scripts/Person.js"></script>
+
+<div>@HttpContext.GetGlobalResourceObject("MyRes", "Greeting")</div>
+<div>@string.Format((string)HttpContext.GetGlobalResourceObject("MyRes", "Today"), DateTime.Now.ToLongDateString())</div>
+
+<hr />
+
+<div>@HttpContext.GetLocalResourceObject(((RazorView)Html.ViewContext.View).ViewPath, "Night")</div>
+<div>
+    @string.Format(
+         (string)HttpContext.GetLocalResourceObject(((RazorView)Html.ViewContext.View).ViewPath, "Price")
+         , (100).ToString("C"))
+</div>

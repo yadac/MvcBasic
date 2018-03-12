@@ -158,6 +158,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\MyRes.de.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyRes.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyRes.ja.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyRes.ja.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -682,6 +697,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_GlobalResources\MyRes.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyRes.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\MyRes.ja.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyRes.ja.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\MyRes.de.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyRes.de.designer.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="Migrations\201803050700059_initialcreate.resx">
       <DependentUpon>201803050700059_initialcreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -718,6 +745,8 @@
     <EmbeddedResource Include="Migrations\201803090304067_AddRestaurant.resx">
       <DependentUpon>201803090304067_AddRestaurant.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Views\Begin\App_LocalResources\Test.cshtml.resx" />
+    <Content Include="Views\Begin\App_LocalResources\Test.cshtml.ja.resx" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\Person.ts" />
