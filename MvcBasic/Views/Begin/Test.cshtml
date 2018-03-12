@@ -1,4 +1,6 @@
-﻿@{
+﻿@using MvcBasic.Helpers
+
+@{
     ViewBag.Title = "Test";
 }
 
@@ -6,14 +8,21 @@
 
 <script type="text/javascript" src="~/Scripts/Person.js"></script>
 
-<div>@HttpContext.GetGlobalResourceObject("MyRes", "Greeting")</div>
-<div>@string.Format((string)HttpContext.GetGlobalResourceObject("MyRes", "Today"), DateTime.Now.ToLongDateString())</div>
+@*<div>@HttpContext.GetGlobalResourceObject("MyRes", "Greeting")</div>
+<div>@string.Format((string)HttpContext.GetGlobalResourceObject("MyRes", "Today"), DateTime.Now.ToLongDateString())</div>*@
+
+<div>@Html.GlobalResource("MyRes", "Greeting", null)</div>
+<div>@Html.GlobalResource("MyRes", "Greeting", DateTime.Now.ToLongDateString())</div>
+
 
 <hr />
 
-<div>@HttpContext.GetLocalResourceObject(((RazorView)Html.ViewContext.View).ViewPath, "Night")</div>
+@*<div>@HttpContext.GetLocalResourceObject(((RazorView)Html.ViewContext.View).ViewPath, "Night")</div>
 <div>
     @string.Format(
-         (string)HttpContext.GetLocalResourceObject(((RazorView)Html.ViewContext.View).ViewPath, "Price")
-         , (100).ToString("C"))
-</div>
+        (string)HttpContext.GetLocalResourceObject(((RazorView)Html.ViewContext.View).ViewPath, "Price")
+        , (100).ToString("C"))
+</div>*@
+
+<div>@Html.LocalResrouce("Night")</div>
+<div>@Html.LocalResrouce("Price", (100).ToString("C"))</div>
