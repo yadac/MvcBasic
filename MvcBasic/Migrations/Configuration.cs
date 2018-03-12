@@ -24,7 +24,7 @@ namespace MvcBasic.Migrations
             {
                 new Member()
                 {
-                    Name = "Taro Yamada",
+                    Name = "山田太郎",
                     Email = "dokaben@example.com",
                     Birth = DateTime.Parse("1980-01-02"),
                     Married = false,
@@ -33,7 +33,7 @@ namespace MvcBasic.Migrations
                 },
                 new Member()
                 {
-                    Name = "Okitsugu Tanuma",
+                    Name = "田沼意次",
                     Email = "otanuma@example.com",
                     Birth = DateTime.Parse("1753-01-01"), // sql server datetime range min 
                     Married = true,
