@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MvcBasic.Models;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using MvcBasic.Models;
 
 namespace MvcBasic.Controllers
 {
@@ -45,6 +41,11 @@ namespace MvcBasic.Controllers
             // call /views/{controller}/{action}.html
             // call /views/begin/show.html
             // if you set other view name at {action}, call other view, actions can share a view.
+            return View();
+        }
+
+        public ActionResult Test()
+        {
             return View();
         }
 
