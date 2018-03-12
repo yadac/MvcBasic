@@ -10,26 +10,35 @@ namespace MvcBasic.Models
     public class Member : IValidatableObject
     {
         public int Id { get; set; }
-        [DisplayName("氏名")]
-        [Required(ErrorMessage = "{0}は必須です")]
-        [RegularExpression("[^a-zA-Z0-9]*", ErrorMessage = "{0}には半角英数字を含めないでください")]
+
+        [Display(Name = "Name", ResourceType = typeof(MvcBasic.Resources.ModelResource))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(MvcBasic.Resources.ModelResource))]
+        [RegularExpression("[^a-zA-Z0-9]*", ErrorMessageResourceName = "RegularExpression", ErrorMessageResourceType = typeof(MvcBasic.Resources.ModelResource))]
         public string Name { get; set; }
-        [DisplayName("メールアドレス")]
+
+        [Display(Name = "Email", ResourceType = typeof(MvcBasic.Resources.ModelResource))]
         [EmailAddress(ErrorMessage = "メールアドレスの形式で入力してください")]
         public string Email { get; set; }
+
         [DisplayName("メールアドレス（確認）")]
         [NotMapped]
         [Compare("Email", ErrorMessage = "{1}と一致していません")]
         public string EmailConfirmed { get; set; }
-        [DisplayName("生年月日")]
-        [Required(ErrorMessage = "{0}は必須です")]
+
+        [Display(Name = "Birth", ResourceType = typeof(MvcBasic.Resources.ModelResource))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(MvcBasic.Resources.ModelResource))]
         public DateTime Birth { get; set; }
-        [DisplayName("既婚")]
+
+        [Display(Name = "Married", ResourceType = typeof(MvcBasic.Resources.ModelResource))]
         public bool Married { get; set; }
+
         [DisplayName("言語")]
         public LanguageEnum Language { get; set; }
-        [DisplayName("自己紹介")]
-        [StringLength(100, ErrorMessage = "{0}は{1}文字以内で入力してください")]
+
+        [Display(Name = "Memo", ResourceType = typeof(MvcBasic.Resources.ModelResource))]
+        [StringLength(100, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(MvcBasic.Resources.ModelResource))]
+        // {0} = Name, {1} = maxLength, {2} = minLength
+        // [StringLength(100, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(MvcBasic.Resources.ModelResource))]
         // [CustomValidation(typeof(Member), "CheckBlackword")]
         //[Blackword("違法,麻薬,毒")]
         public string Memo { get; set; }
